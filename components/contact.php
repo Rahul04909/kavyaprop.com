@@ -63,7 +63,7 @@ $csrf = generateCSRFToken();
             </div>
             <div class="dh-contact-info-details">
               <h4>Call Center</h4>
-              <a href="tel:+919220551771">+91 92205 51771</a>
+              <a href="tel:+917056721800">+91 70567 21800</a>
             </div>
           </div>
           
@@ -74,7 +74,7 @@ $csrf = generateCSRFToken();
             </div>
             <div class="dh-contact-info-details">
               <h4>Email Address</h4>
-              <a href="mailto:info@dholerasmartcity.com">info@dholerasmartcity.com</a>
+              <a href="mailto:info@kavyaprop.com">info@kavyaprop.com</a>
             </div>
           </div>
           
