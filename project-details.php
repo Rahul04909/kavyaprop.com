@@ -269,7 +269,6 @@ if (!function_exists('renderDhStars')) {
             <input type="hidden" name="csrf_token"    value="<?php echo $csrf; ?>">
             <input type="hidden" name="project_id"    value="<?php echo (int)$project['id']; ?>">
             <input type="hidden" name="interest"      value="project-<?php echo htmlspecialchars($project['category']); ?>">
-            <input type="hidden" name="message"       id="pdAutoMsg" value="">
 
             <input class="dh-details-sidebar-input"
                    type="text" name="name" id="pdName"
@@ -289,8 +288,14 @@ if (!function_exists('renderDhStars')) {
                    value="<?php echo htmlspecialchars($enq_old['phone'] ?? ''); ?>"
                    required maxlength="20">
 
+            <textarea class="dh-details-sidebar-input"
+                      name="message" id="pdMessage"
+                      placeholder="Write your message here..."
+                      style="min-height: 100px; resize: vertical;"
+                      required><?php echo htmlspecialchars($enq_old['message'] ?? ''); ?></textarea>
+
             <button class="dh-details-sidebar-btn" type="submit" id="pdSubmitBtn">
-              <span class="pd-btn-text"><i class="fa-solid fa-file-arrow-down"></i> Download Brochure &amp; Enquire</span>
+              <span class="pd-btn-text"><i class="fa-solid fa-paper-plane"></i> Submit Enquiry</span>
               <span class="pd-btn-loader" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i> Submitting…</span>
             </button>
             
@@ -330,20 +335,16 @@ if (!function_exists('renderDhStars')) {
 
   // ── Sidebar Enquiry Form ──────────────────────────────────────────────
   (function () {
-    const form    = document.getElementById('pdEnqForm');
-    const btn     = document.getElementById('pdSubmitBtn');
-    const autoMsg = document.getElementById('pdAutoMsg');
+    const form = document.getElementById('pdEnqForm');
+    const btn  = document.getElementById('pdSubmitBtn');
 
-    if (!form || !btn || !autoMsg) return;
+    if (!form || !btn) return;
 
-    // Auto-populate hidden message field with project context before submit
     form.addEventListener('submit', function (e) {
-      const name    = document.getElementById('pdName')?.value.trim()  || '';
-      const phone   = document.getElementById('pdPhone')?.value.trim() || '';
-      const project = form.querySelector('[name="project_id"]')?.value  || '';
-
-      autoMsg.value = `Enquiry from project details page. Project ID: ${project}. `
-                    + `Visitor ${name} (${phone}) is interested in this project and requests a brochure or callback.`;
+      // Basic check to see if form is valid before triggering loader
+      if (!form.checkValidity()) {
+        return;
+      }
 
       // Show loading spinner
       btn.querySelector('.pd-btn-text').style.display  = 'none';

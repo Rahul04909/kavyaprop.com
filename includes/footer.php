@@ -108,7 +108,7 @@
   <div class="dh-footer-bottom">
     <div class="dh-footer-bottom-container">
       <div>
-        &copy; <?php echo date('Y'); ?> Dholera Smart City Alliance. All rights reserved. Created by Professional UX/UI Team.
+        &copy; <?php echo date('Y'); ?> <a href="https://kavyaprop.com" style="color: inherit; text-decoration: none;">kavyaprop.com</a>. All rights reserved. Designed by <a href="https://mineib.com" target="_blank" rel="noopener noreferrer" style="color: var(--dh-orange, #ef7d00); text-decoration: none; font-weight: 600; transition: color 0.2s ease;">Mineib</a>
       </div>
       <div class="dh-footer-bottom-links">
         <a href="#about-us">Privacy Policy</a>
