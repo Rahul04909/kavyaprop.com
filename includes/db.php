@@ -15,11 +15,11 @@ try {
 }
 
 // 2. Establish Secure PDO Connection
-$db_host = $_ENV['DB_HOST'] ?? '127.0.0.1';
+$db_host = $_ENV['DB_HOST'] ?? 'localhost';
 $db_port = $_ENV['DB_PORT'] ?? '3306';
-$db_name = $_ENV['DB_NAME'] ?? 'dholera_db';
-$db_user = $_ENV['DB_USER'] ?? 'root';
-$db_pass = $_ENV['DB_PASS'] ?? '';
+$db_name = $_ENV['DB_NAME'] ?? 'mineib_i1_kavya_prop';
+$db_user = $_ENV['DB_USER'] ?? 'mineib_i1_mineib';
+$db_pass = $_ENV['DB_PASS'] ?? 'Rd14072003@./';
 $db_charset = 'utf8mb4';
 
 $dsn = "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=$db_charset";
