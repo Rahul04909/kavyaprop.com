@@ -92,17 +92,8 @@ $csrf_token = generateCSRFToken();
     <div class="adm-login-card">
       
       <!-- Logo Header -->
-      <div class="adm-login-header">
-        <svg class="adm-login-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 65" width="160" height="52">
-          <!-- White silhouette logo graphic -->
-          <g>
-            <path d="M 12 18 C 22 8, 32 10, 42 20 C 50 28, 56 12, 66 14 C 74 16, 80 22, 86 18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M 8 23 C 18 12, 28 14, 38 24 C 46 32, 52 16, 62 16 C 70 16, 76 26, 82 23" fill="none" stroke="var(--adm-orange, #ef7d00)" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M 16 14 C 24 6, 34 8, 44 16 C 52 24, 58 10, 68 11 C 76 12, 82 18, 88 15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round"/>
-          </g>
-          <text x="6" y="47" font-family="'Montserrat', sans-serif" font-weight="800" font-size="28" fill="#ffffff" letter-spacing="-0.5">Dholera</text>
-          <text x="7" y="58" font-family="'Outfit', sans-serif" font-weight="600" font-size="7.2" fill="#94a3b8" letter-spacing="0.1">HUMAN BUILT ON TRUST. ALWAYS.</text>
-        </svg>
+      <div class="adm-login-header" style="text-align: center; padding: 20px 0;">
+        <img src="../assets/images/logo.png" alt="Kavya Prop Logo" class="adm-login-logo-img" style="height: 52px; width: auto; object-fit: contain; max-width: 180px;">
       </div>
 
       <!-- Form Body Area -->

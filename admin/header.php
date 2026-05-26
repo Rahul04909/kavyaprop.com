@@ -450,23 +450,9 @@ try {
         <aside class="main-sidebar sidebar-light-primary elevation-4">
             <a href="./" class="brand-link d-flex align-items-center justify-content-center text-decoration-none">
                 <!-- Collapsed state (mini logo) -->
-                <svg class="brand-image-mini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30" height="30">
-                    <g>
-                        <path d="M 5 20 C 15 10, 25 12, 35 22" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="3.5" stroke-linecap="round"/>
-                        <path d="M 2 25 C 12 14, 22 16, 32 26" fill="none" stroke="#ef7d00" stroke-width="3.5" stroke-linecap="round"/>
-                        <path d="M 8 16 C 16 8, 26 10, 36 18" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3.5" stroke-linecap="round"/>
-                    </g>
-                </svg>
+                <img src="<?php echo $adminBase; ?>../assets/images/logo.png" alt="Kavya Prop" class="brand-image-mini" style="height: 30px; width: auto; object-fit: contain; max-width: 30px;">
                 <!-- Expanded state (large logo) -->
-                <svg class="brand-image-large" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 65" width="130" height="42">
-                    <g>
-                        <path d="M 12 18 C 22 8, 32 10, 42 20 C 50 28, 56 12, 66 14 C 74 16, 80 22, 86 18" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M 8 23 C 18 12, 28 14, 38 24 C 46 32, 52 16, 62 16 C 70 16, 76 26, 82 23" fill="none" stroke="#ef7d00" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M 16 14 C 24 6, 34 8, 44 16 C 52 24, 58 10, 68 11 C 76 12, 82 18, 88 15" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
-                    </g>
-                    <text x="6" y="47" font-family="'Montserrat', sans-serif" font-weight="800" font-size="28" fill="#ffffff" letter-spacing="-0.5">Dholera</text>
-                    <text x="7" y="58" font-family="'Outfit', sans-serif" font-weight="600" font-size="7.2" fill="#cbd5e1" letter-spacing="0.1">HUMAN BUILT ON TRUST. ALWAYS.</text>
-                </svg>
+                <img src="<?php echo $adminBase; ?>../assets/images/logo.png" alt="Kavya Prop" class="brand-image-large" style="height: 36px; width: auto; object-fit: contain; max-width: 160px;">
             </a>
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">

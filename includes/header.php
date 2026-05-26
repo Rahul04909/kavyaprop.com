@@ -50,26 +50,8 @@
   <!-- 2. Main Navigation Header Bar -->
   <div class="dh-main-header">
     <!-- Brand Logo -->
-    <a href="index.php" class="dh-brand-logo" title="Dholera - Home">
-      <!-- High-fidelity Inline vector SVG replicating the official Dholera Branding -->
-      <svg class="dh-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 65" width="200" height="65">
-        <!-- Colorful Artistic Abstract Ribbon Icon -->
-        <g id="logo-ribbon">
-          <!-- Deep Blue Waves -->
-          <path d="M 12 18 C 22 8, 32 10, 42 20 C 50 28, 56 12, 66 14 C 74 16, 80 22, 86 18" fill="none" stroke="#00a0e9" stroke-width="3" stroke-linecap="round"/>
-          <!-- Orange Waves -->
-          <path d="M 8 23 C 18 12, 28 14, 38 24 C 46 32, 52 16, 62 16 C 70 16, 76 26, 82 23" fill="none" stroke="#ef7d00" stroke-width="3" stroke-linecap="round"/>
-          <!-- Vibrant Green Waves -->
-          <path d="M 16 14 C 24 6, 34 8, 44 16 C 52 24, 58 10, 68 11 C 76 12, 82 18, 88 15" fill="none" stroke="#2b6009" stroke-width="3" stroke-linecap="round"/>
-          <!-- Birds hovering (aesthetic micro-details) -->
-          <path d="M 45 6 Q 47 4 49 6 Q 51 4 53 6" fill="none" stroke="#718096" stroke-width="0.8" stroke-linecap="round"/>
-          <path d="M 64 5 Q 66 3 68 5 Q 70 3 72 5" fill="none" stroke="#718096" stroke-width="0.8" stroke-linecap="round"/>
-        </g>
-        
-        <!-- Typography -->
-        <text x="6" y="47" font-family="'Montserrat', sans-serif" font-weight="800" font-size="28" fill="#3a3a3a" letter-spacing="-0.5">Dholera</text>
-        <text x="7" y="58" font-family="'Outfit', sans-serif" font-weight="600" font-size="7.2" fill="#718096" letter-spacing="0.1">HUMAN BUILT ON TRUST. ALWAYS.</text>
-      </svg>
+    <a href="index.php" class="dh-brand-logo" title="Kavya Prop - Home" style="display: flex; align-items: center;">
+      <img src="assets/images/logo.png" alt="Kavya Prop Logo" class="dh-logo-img" style="height: 52px; width: auto; object-fit: contain;">
     </a>
 
     <!-- Center Navigation Menu (Desktop) -->
@@ -102,12 +84,9 @@
 <div class="dh-sidebar-drawer" id="dhSidebarDrawer">
   <!-- Drawer Header -->
   <div class="dh-drawer-header">
-    <svg class="dh-drawer-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 65" width="160" height="52">
-      <!-- Replicating exact logo for sidebar drawer -->
-      <use href="#logo-ribbon"/>
-      <text x="6" y="47" font-family="'Montserrat', sans-serif" font-weight="800" font-size="28" fill="#3a3a3a" letter-spacing="-0.5">Dholera</text>
-      <text x="7" y="58" font-family="'Outfit', sans-serif" font-weight="600" font-size="7.2" fill="#718096" letter-spacing="0.1">HUMAN BUILT ON TRUST. ALWAYS.</text>
-    </svg>
+    <a href="index.php" class="dh-drawer-logo-link" style="display: flex; align-items: center; padding: 10px 0;">
+      <img src="assets/images/logo.png" alt="Kavya Prop Logo" class="dh-drawer-logo-img" style="height: 44px; width: auto; object-fit: contain;">
+    </a>
   </div>
 
   <!-- Drawer Body Navigation -->
