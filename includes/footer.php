@@ -52,17 +52,17 @@
           <!-- Address -->
           <div class="dh-footer-info-item">
             <i class="fa-solid fa-location-dot"></i>
-            <span>Dholera SIR, District Ahmedabad, Gujarat, India</span>
+            <span>Shop No.125, First Floor Shubham Tower, Near Fortis, Neelam Bata Road, N.I.T Faridabad-121001</span>
           </div>
           <!-- Phone -->
           <div class="dh-footer-info-item">
             <i class="fa-solid fa-phone"></i>
-            <a href="tel:+919220551771">+91 92205 51771</a>
+            <a href="tel:+917056721800">+91 70567 21800</a>
           </div>
           <!-- Email -->
           <div class="dh-footer-info-item">
             <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:info@dholerasmartcity.com">info@dholerasmartcity.com</a>
+            <a href="mailto:info@kavyaprop.com">info@kavyaprop.com</a>
           </div>
         </div>
         <div class="dh-footer-hours">
@@ -89,7 +89,7 @@
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="dh-footer-social-link" title="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="dh-footer-social-link" title="Instagram">
+          <a href="https://www.instagram.com/kavya_prop_com_?igsh=aTZ0emRjZHRvdWR6" target="_blank" rel="noopener noreferrer" class="dh-footer-social-link" title="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="dh-footer-social-link" title="X (Twitter)">
