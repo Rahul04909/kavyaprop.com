@@ -181,53 +181,93 @@ require_once 'includes/db.php';
        SECTION 5 · TIMELINE / MILESTONES
   ══════════════════════════════════════════════════ -->
   <section class="dh-aboutpage-timeline">
-    <div style="max-width:1200px; margin:0 auto; text-align:center; margin-bottom:50px;">
+    <div style="max-width:1200px; margin:0 auto; text-align:center; margin-bottom:20px;">
       <span class="dh-aboutpage-subtitle">Our Journey</span>
       <h2 class="dh-aboutpage-title">Key Milestones of Kavya Prop</h2>
     </div>
 
-    <div class="dh-timeline-container">
+    <div class="kavya-timeline-wrapper">
+      <!-- Horizontal axis line through center -->
+      <div class="kavya-timeline-line"></div>
 
-      <div class="dh-timeline-item dh-tl-left">
-        <div class="dh-timeline-content">
-          <span class="dh-tl-year">2018</span>
-          <h4>Foundation of Kavya Prop</h4>
-          <p>Started real estate advisory services at Shubham Tower in NIT Faridabad, catering to strategic Delhi-NCR residential and commercial expansion corridors.</p>
+      <div class="kavya-timeline-items">
+
+        <!-- Node 1 (Below) -->
+        <div class="kavya-timeline-item kavya-tl-bottom">
+          <div class="kavya-tl-badge-wrapper">
+            <div class="kavya-tl-badge badge-green" title="Initiation Phase">
+              <i class="fa-solid fa-arrows-spin"></i>
+            </div>
+            <div class="kavya-tl-arrow"></div>
+          </div>
+          <div class="kavya-tl-text-block">
+            <span class="kavya-tl-year">2018</span>
+            <h4>Foundation of Kavya Prop</h4>
+            <p>Started real estate advisory services at Shubham Tower in NIT Faridabad, catering to strategic Delhi-NCR corridors.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="dh-timeline-item dh-tl-right">
-        <div class="dh-timeline-content">
-          <span class="dh-tl-year">2020</span>
-          <h4>Expansion to Dholera SIR</h4>
-          <p>Identified the immense wealth potential of India's first greenfield smart city. Set up key strategic tie-ups and representative support in Gujarat.</p>
+        <!-- Node 2 (Above) -->
+        <div class="kavya-timeline-item kavya-tl-top">
+          <div class="kavya-tl-text-block">
+            <span class="kavya-tl-year">2020</span>
+            <h4>Expansion to Dholera SIR</h4>
+            <p>Identified the immense wealth potential of India's first greenfield smart city, establishing solid ties in Gujarat.</p>
+          </div>
+          <div class="kavya-tl-badge-wrapper">
+            <div class="kavya-tl-arrow"></div>
+            <div class="kavya-tl-badge badge-dark" title="Planning Phase">
+              <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="dh-timeline-item dh-tl-left">
-        <div class="dh-timeline-content">
-          <span class="dh-tl-year">2022</span>
-          <h4>100% RERA compliance Pledge</h4>
-          <p>Established strict quality filters, committing to exclusively showcase RERA-registered and government-approved projects to guarantee client security.</p>
+        <!-- Node 3 (Below) -->
+        <div class="kavya-timeline-item kavya-tl-bottom">
+          <div class="kavya-tl-badge-wrapper">
+            <div class="kavya-tl-badge badge-green" title="Execution Phase">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <div class="kavya-tl-arrow"></div>
+          </div>
+          <div class="kavya-tl-text-block">
+            <span class="kavya-tl-year">2022</span>
+            <h4>100% RERA compliance Pledge</h4>
+            <p>Established strict quality filters, committing to exclusively showcase certified, secure government-approved properties.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="dh-timeline-item dh-tl-right">
-        <div class="dh-timeline-content">
-          <span class="dh-tl-year">2024</span>
-          <h4>5,000+ Happy Investors</h4>
-          <p>Successfully crossed the milestone of serving over 5,000 retail and corporate clients with high-appreciating, legally sound investments.</p>
+        <!-- Node 4 (Above) -->
+        <div class="kavya-timeline-item kavya-tl-top">
+          <div class="kavya-tl-text-block">
+            <span class="kavya-tl-year">2024</span>
+            <h4>5,000+ Happy Investors</h4>
+            <p>Successfully crossed the landmark of serving over 5,000 retail and corporate clients with high-performing growth assets.</p>
+          </div>
+          <div class="kavya-tl-badge-wrapper">
+            <div class="kavya-tl-arrow"></div>
+            <div class="kavya-tl-badge badge-dark" title="Monitoring Phase">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="dh-timeline-item dh-tl-left">
-        <div class="dh-timeline-content dh-tl-active">
-          <span class="dh-tl-year">2026+</span>
-          <h4>Futuristic Asset Portfolios</h4>
-          <p>Continuing to pioneer access to prime smart plots and multi-modal logistical corridors to deliver unparalleled financial growth for our investors.</p>
+        <!-- Node 5 (Below) -->
+        <div class="kavya-timeline-item kavya-tl-bottom">
+          <div class="kavya-tl-badge-wrapper">
+            <div class="kavya-tl-badge badge-green" title="Futuristic / Closure Phase">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="kavya-tl-arrow"></div>
+          </div>
+          <div class="kavya-tl-text-block">
+            <span class="kavya-tl-year">2026+</span>
+            <h4>Futuristic Asset Portfolios</h4>
+            <p>Continuing to pioneer access to prime smart plots and logistics corridors to deliver robust compounding wealth.</p>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
 
