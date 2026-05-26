@@ -1,0 +1,332 @@
+/* ==========================================================================
+   DHOLERA FOOTER COMPONENT STYLES
+   Developed by Expert UI/UX Designer & Developer
+   ========================================================================== */
+
+.dh-footer-wrapper {
+  background-color: #0f172a; /* Obsidian deep slate blue-black */
+  color: #94a3b8; /* Slate gray readable text */
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  border-top: 5px solid var(--dh-orange, #ef7d00); /* Top accent orange border matching header topbar */
+  position: relative;
+  z-index: 10;
+}
+
+.dh-footer-wrapper *,
+.dh-footer-wrapper *::before,
+.dh-footer-wrapper *::after {
+  box-sizing: inherit;
+}
+
+/* Main Grid Area */
+.dh-footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px 40px 40px;
+}
+
+.dh-footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 1.1fr 1.1fr;
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dh-footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Brand Details (Column 1) */
+.dh-footer-logo-link {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.dh-footer-logo-svg {
+  height: 52px;
+  width: auto;
+}
+
+.dh-footer-about {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Column Headings */
+.dh-footer-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.dh-footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--dh-orange, #ef7d00);
+  border-radius: 2px;
+}
+
+/* Navigation Links (Column 2) */
+.dh-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.dh-footer-link-item a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dh-footer-link-item a i {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.dh-footer-link-item a:hover {
+  color: var(--dh-orange, #ef7d00);
+}
+
+.dh-footer-link-item a:hover i {
+  transform: translateX(4px);
+  color: var(--dh-orange, #ef7d00);
+}
+
+/* Support Details (Column 3) */
+.dh-footer-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dh-footer-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.dh-footer-info-item i {
+  color: var(--dh-orange, #ef7d00);
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.dh-footer-info-item a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dh-footer-info-item a:hover {
+  color: var(--dh-orange, #ef7d00);
+}
+
+.dh-footer-hours {
+  color: #64748b;
+  font-size: 12.5px;
+  margin-top: 4px;
+}
+
+/* Social Connect & Newsletter (Column 4) */
+.dh-footer-newsletter-text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.dh-footer-form {
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.dh-footer-input {
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: none;
+  padding: 10px 16px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13.5px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.dh-footer-input:focus {
+  border-color: var(--dh-orange, #ef7d00);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.dh-footer-submit-btn {
+  background-color: var(--dh-orange, #ef7d00);
+  border: none;
+  color: #ffffff;
+  padding: 0 16px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.dh-footer-submit-btn:hover {
+  background-color: var(--dh-orange-hover, #d46c00);
+}
+
+/* Social circles exactly matching header topbar style */
+.dh-footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.dh-footer-social-link {
+  color: #94a3b8;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dh-footer-social-link:hover {
+  background-color: var(--dh-orange, #ef7d00);
+  color: #ffffff;
+  border-color: var(--dh-orange, #ef7d00);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Copyright Bottom Bar Area */
+.dh-footer-bottom {
+  background-color: #0b0f19; /* slightly darker base background */
+  padding: 30px 40px;
+}
+
+.dh-footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dh-footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.dh-footer-bottom-links a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dh-footer-bottom-links a:hover {
+  color: var(--dh-orange, #ef7d00);
+}
+
+/* ==========================================================================
+   FOOTER RESPONSIVENESS
+   ========================================================================== */
+
+/* Laptop Grid Adapters */
+@media (max-width: 1024px) {
+  .dh-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* Tablet / Mobile Layout Adapter */
+@media (max-width: 768px) {
+  .dh-footer-main {
+    padding: 60px 24px 30px 24px;
+  }
+  .dh-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-bottom: 40px;
+  }
+  .dh-footer-column {
+    align-items: center;
+    text-align: center;
+  }
+  .dh-footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .dh-footer-links {
+    align-items: center;
+  }
+  .dh-footer-info-list {
+    align-items: center;
+  }
+  .dh-footer-info-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+  .dh-footer-form {
+    margin: 0 auto 20px auto;
+  }
+  .dh-footer-socials {
+    justify-content: center;
+  }
+  .dh-footer-bottom {
+    padding: 24px;
+  }
+  .dh-footer-bottom-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dh-footer-bottom-links {
+    justify-content: center;
+  }
+}

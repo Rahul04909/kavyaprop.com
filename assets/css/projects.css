@@ -1,0 +1,344 @@
+/* ==========================================================================
+   DHOLERA PROJECTS COMPONENT STYLES (UDEMY/FLIPKART STYLE)
+   Developed by Expert UI/UX Designer & Developer
+   ========================================================================== */
+
+.dh-projects-section {
+  padding: 60px 40px;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dh-projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header Text Section */
+.dh-projects-header {
+  margin-bottom: 24px;
+}
+
+.dh-projects-subtitle {
+  color: var(--dh-orange, #ef7d00);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.dh-projects-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1c1d1f;
+  margin: 0;
+}
+
+/* Card Slider Area */
+.dh-projects-slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.dh-projects-cards-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  /* Hide standard scrollbars */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.dh-projects-cards-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Modern Clean Card Layout with Solid Borders */
+.dh-project-card {
+  flex-shrink: 0;
+  width: calc(25% - 12px); /* 4 cards per row on wide screen */
+  min-width: 250px;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dh-project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dh-orange, #ef7d00);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Image Container */
+.dh-project-card-image-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #d1d7dc;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #f8fafc;
+}
+
+.dh-project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.dh-project-card:hover .dh-project-card-image {
+  transform: scale(1.03);
+}
+
+/* Card Body Content */
+.dh-project-card-body {
+  padding: 12px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dh-project-card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1c1d1f;
+  margin: 6px 0 4px 0;
+  /* Restrict title to exactly 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 38px;
+}
+
+.dh-project-card-author {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  color: #6a6f73;
+  margin: 0 0 4px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Rating Sub-section */
+.dh-project-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #6a6f73;
+  margin-bottom: 4px;
+}
+
+.dh-project-rating-val {
+  font-weight: 700;
+  color: #b4690e;
+  font-size: 13px;
+}
+
+.dh-project-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.dh-project-stars i {
+  color: #e5981d; /* Solid Udemy yellow stars */
+  font-size: 11px;
+}
+
+.dh-project-reviews-count {
+  font-size: 11.5px;
+  color: #6a6f73;
+}
+
+/* Professional View Details Button Styles */
+.dh-project-btn-box {
+  margin-top: auto;
+  padding-top: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dh-project-view-btn {
+  width: 100%;
+  background-color: var(--dh-orange, #ef7d00);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border: 2px solid var(--dh-orange, #ef7d00);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dh-project-card:hover .dh-project-view-btn {
+  background-color: var(--dh-green, #2b6009);
+  border-color: var(--dh-green, #2b6009);
+}
+
+.dh-project-view-btn i {
+  transition: transform 0.2s ease;
+  font-size: 14px;
+}
+
+.dh-project-card:hover .dh-project-view-btn i {
+  transform: translateX(3px);
+}
+
+/* Circular Arrow Navigation Buttons overlapping the border edge */
+.dh-project-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #6a6f73;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c1d1f;
+  font-size: 16px;
+  z-index: 60;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dh-project-arrow:hover {
+  background-color: #f8fafc;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.dh-projects-slider-wrapper:hover .dh-project-arrow.dh-arrow-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dh-project-arrow-left {
+  left: -24px;
+}
+
+.dh-project-arrow-right {
+  right: -24px;
+}
+
+/* Show All Link style */
+.dh-projects-showall {
+  margin-top: 24px;
+  display: inline-block;
+}
+
+.dh-projects-link {
+  font-family: 'Montserrat', sans-serif;
+  color: #5624d0; /* Exact purple course links */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.dh-projects-link:hover {
+  color: #401b9c;
+}
+
+.dh-projects-link i {
+  transition: transform 0.2s ease;
+}
+
+.dh-projects-link:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   PROJECTS COMPONENT RESPONSIVENESS
+   ========================================================================== */
+
+/* Wide Screens / Small Laptops */
+@media (max-width: 1200px) {
+  .dh-project-card {
+    width: calc(33.333% - 11px); /* 3 cards per row */
+  }
+}
+
+/* Tablets landscape */
+@media (max-width: 991px) {
+  .dh-projects-section {
+    padding: 40px 24px;
+  }
+  .dh-project-card {
+    width: calc(50% - 8px); /* 2 cards per row */
+  }
+  .dh-project-arrow {
+    opacity: 0.95 !important;
+    visibility: visible !important;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .dh-project-arrow-left {
+    left: -12px;
+  }
+  .dh-project-arrow-right {
+    right: -12px;
+  }
+}
+
+/* Mobiles portrait (udemy-like horizontal scrolling snaps) */
+@media (max-width: 600px) {
+  .dh-projects-section {
+    padding: 30px 16px;
+  }
+  .dh-projects-cards-container {
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+  }
+  .dh-project-card {
+    width: 260px; /* fixed size scroll elements on mobile */
+    scroll-snap-align: start;
+  }
+  .dh-project-arrow {
+    display: none; /* Hide circular navigation on small screens */
+  }
+  .dh-projects-title {
+    font-size: 1.6rem;
+  }
+}

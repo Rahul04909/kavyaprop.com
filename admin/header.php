@@ -1,0 +1,534 @@
+<?php
+// 1. Include Secure DB & Commons
+require_once __DIR__ . '/../includes/db.php';
+
+// 2. Enforce active administrator authentication gate
+enforceAdminAuth();
+
+$currentPage = basename($_SERVER['SCRIPT_NAME']);
+
+$menuItems = [
+    [
+        "menuTitle" => "Dashboard",
+        "icon"      => "fas fa-home",
+        "pages"     => [
+            ["title" => "Home", "url" => "index.php"]
+        ],
+    ],
+    [
+        "menuTitle" => "Projects Portal",
+        "icon"      => "fas fa-compass-drafting",
+        "pages"     => [
+            ["title" => "Manage Projects", "url" => "manage-projects.php"],
+            ["title" => "Add New Project", "url" => "add-project.php"]
+        ],
+    ],
+    [
+        "menuTitle" => "Enquiries",
+        "icon"      => "fas fa-inbox",
+        "pages"     => [
+            ["title" => "All Enquiries",   "url" => "enquiries/index.php"],
+        ],
+    ],
+    [
+        "menuTitle" => "Settings",
+        "icon"      => "fas fa-cog",
+        "pages"     => [
+            ["title" => "Profile", "url" => "profile.php"]
+        ],
+    ]
+];
+
+
+$active_pageInfo = null;
+foreach ($menuItems as $menuItem) {
+    foreach ($menuItem['pages'] as $page) {
+        if ($currentPage === $page['url']) {
+            $active_pageInfo = [
+                "breadcrumb_Items" => [
+                    ["title" => $menuItem['menuTitle'], "url" => "#"],
+                    ["title" => $page['title'], "url" => $page['url']]
+                ],
+                "page_title" => $page['title'],
+                "active_menu" => $menuItem,
+                "active_page" => $page
+            ];
+            break 2;
+        }
+    }
+}
+
+$breadcrumb_Items = $active_pageInfo['breadcrumb_Items'] ?? [];
+$page_title       = $active_pageInfo['page_title']       ?? '';
+$active_menu      = $active_pageInfo['active_menu']      ?? null;
+$active_page      = $active_pageInfo['active_page']      ?? null;
+
+// Allow child pages to override title & breadcrumb (e.g. subdirectory pages)
+if (!empty($_pageTitle))  { $page_title       = $_pageTitle; }
+if (!empty($_breadcrumb)) { $breadcrumb_Items = $_breadcrumb; }
+
+// Base prefix for links/assets - subdirectory pages set $_adminBase = '../' before including
+$adminBase = $_adminBase ?? '';
+
+// Count new (unread) enquiries for sidebar badge
+$_newEnqCount = 0;
+try {
+    $_enqStmt = $pdo->query("SELECT COUNT(*) FROM enquiries WHERE status = 'new'");
+    $_newEnqCount = (int)$_enqStmt->fetchColumn();
+} catch (Exception $_ex) { /* table may not exist yet */ }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <title><?= htmlspecialchars($page_title) ?></title>
+    <link rel="icon" href="<?= $adminBase ?>../favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <style>
+        :root {
+            --sidebar-bg: #ffffff;
+            --sidebar-color: #2c3e50;
+            --primary-green: #28a745;
+            --accent-yellow: #ffc107;
+            --border-color: #f0f0f1;
+            --submenu-bg: #f6f7f7;
+            --indicator-width: 4px;
+        }
+
+        /* Sidebar Container */
+        .main-sidebar {
+            background-color: var(--sidebar-bg) !important;
+            border-right: 1px solid #dcdcde;
+            box-shadow: none !important;
+        }
+
+        /* Brand Logo Area */
+        .brand-link {
+            background-color: var(--primary-green) !important;
+            color: #fff !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            padding: 15px !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            margin: 0 !important;
+        }
+
+        .brand-link .brand-image {
+            float: none !important;
+            line-height: .8;
+            margin: 0 !important;
+            max-height: 40px;
+            width: auto;
+        }
+
+        /* User Panel */
+        .user-panel {
+            border-bottom: 1px solid var(--border-color) !important;
+            margin: 0 !important;
+            padding: 12px 15px !important;
+        }
+
+        .user-panel .info {
+            color: var(--sidebar-color) !important;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Navigation Items */
+        .nav-sidebar > .nav-item {
+            margin-bottom: 0 !important;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-sidebar > .nav-item:first-child {
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-sidebar .nav-link {
+            color: var(--sidebar-color) !important;
+            padding: 12px 15px !important;
+            border-radius: 0 !important;
+            margin: 0 !important;
+            position: relative;
+            transition: background-color 0.1s ease-in-out;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* WordPress Style Left Indicator */
+        .nav-sidebar .nav-link.active::before,
+        .nav-item.menu-open > .nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: var(--indicator-width);
+            background-color: var(--primary-green);
+        }
+
+        /* Hover State */
+        .nav-sidebar .nav-link:hover {
+            background-color: var(--submenu-bg) !important;
+            color: var(--primary-green) !important;
+        }
+
+        /* Active State */
+        .nav-sidebar .nav-link.active {
+            background-color: var(--submenu-bg) !important;
+            color: var(--primary-green) !important;
+            box-shadow: none !important;
+        }
+
+        .nav-sidebar .nav-link.active i {
+            color: var(--primary-green) !important;
+        }
+
+        /* Icon Styling */
+        .nav-sidebar .nav-icon {
+            color: #8c8f94;
+            margin-right: 10px !important;
+            width: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            transition: color 0.1s ease-in-out;
+        }
+
+        .nav-link:hover .nav-icon,
+        .nav-link.active .nav-icon,
+        .menu-open > .nav-link .nav-icon {
+            color: var(--primary-green) !important;
+        }
+
+        /* Submenu (Treeview) Styling */
+        .nav-treeview {
+            background-color: var(--submenu-bg) !important;
+            padding: 0 !important;
+        }
+
+        .nav-treeview > .nav-item > .nav-link {
+            padding-left: 45px !important; /* Indent submenus like WP */
+            font-size: 0.85rem;
+            color: #50575e !important;
+            border-bottom: none !important;
+            border-top: none !important;
+        }
+
+        .nav-treeview > .nav-item > .nav-link:hover {
+            color: var(--primary-green) !important;
+            background-color: #fff !important;
+        }
+
+        .nav-treeview > .nav-item > .nav-link.active {
+            color: var(--primary-green) !important;
+            background-color: #fff !important;
+            font-weight: 600;
+        }
+
+        /* Active highlight for submenu text in WP is often Yellow or lighter Green in our case */
+        .nav-treeview > .nav-item > .nav-link.active::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 3px;
+            background-color: var(--accent-yellow);
+            border-radius: 2px 0 0 2px;
+        }
+
+        /* Expand/Collapse Toggle Icons (+/-) */
+        .nav-sidebar .right {
+            font-size: 0.8rem !important;
+            top: 1.1rem !important;
+            color: #8c8f94 !important;
+            transition: all 0.2s ease-in-out;
+            margin-top: -2px;
+        }
+
+        .nav-sidebar .right::before {
+            content: "\f067"; /* plus */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        .menu-open > .nav-link .right::before {
+            content: "\f068"; /* minus */
+        }
+
+        .menu-open > .nav-link .right {
+            transform: none !important; /* No rotation needed for +/- */
+            color: var(--primary-green) !important;
+        }
+
+        /* Submenu Prefix Redesign */
+        .submenu-icon {
+            font-size: 0.6rem !important;
+            opacity: 0.4;
+            margin-right: 15px !important;
+            width: auto !important;
+        }
+
+        .nav-link.active .submenu-icon {
+            opacity: 1;
+            color: var(--primary-green) !important;
+        }
+
+        /* Sidebar Mini behavior refinements */
+        .brand-image-mini {
+            display: none !important;
+        }
+        .brand-image-large {
+            display: block !important;
+        }
+
+        .sidebar-collapse .brand-image-mini {
+            display: block !important;
+        }
+        .sidebar-collapse .brand-image-large {
+            display: none !important;
+        }
+
+        .sidebar-collapse .main-sidebar {
+            width: 73px !important;
+        }
+
+        .sidebar-collapse .brand-link {
+            padding: 10px !important;
+            justify-content: center !important;
+        }
+
+        .sidebar-collapse .user-panel {
+            padding: 12px 0 !important;
+            display: flex !important;
+            justify-content: center !important;
+            border-bottom: 1px solid var(--border-color) !important;
+        }
+
+        .sidebar-collapse .user-panel a {
+            display: flex !important;
+            justify-content: center !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .sidebar-collapse .user-panel .image {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: flex !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+        .sidebar-collapse .user-panel .info {
+            display: none !important;
+        }
+
+        .sidebar-collapse .nav-sidebar .nav-link {
+            padding: 12px 15px !important;
+            display: flex !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+        .sidebar-collapse .nav-sidebar .nav-icon {
+            margin: 0 !important;
+        }
+
+        .sidebar-collapse .nav-sidebar .nav-link::before {
+            display: none;
+        }
+
+        /* Ensure active indicator works in collapsed mode but is subtle */
+        .sidebar-collapse .nav-sidebar .nav-link.active {
+            border-left: 3px solid var(--primary-green);
+        }
+
+        /* WordPress-style Pop-out Labels on Hover */
+        @media (min-width: 992px) {
+            .sidebar-mini.sidebar-collapse .main-sidebar:not(.sidebar-no-expand):hover .nav-sidebar > .nav-item > .nav-link > p,
+            .sidebar-mini.sidebar-collapse .main-sidebar:not(.sidebar-no-expand) .nav-sidebar > .nav-item > .nav-link > p {
+                transition: none !important;
+            }
+
+            .sidebar-mini.sidebar-collapse .main-sidebar:not(.sidebar-no-expand) .nav-item:hover > .nav-link > p {
+                display: block !important;
+                position: absolute;
+                left: 73px;
+                top: 0;
+                width: 200px;
+                margin: 0 !important;
+                padding: 12px 20px !important;
+                background-color: #2c3338 !important; /* Dark WP style background */
+                color: #fff !important;
+                border-radius: 0 4px 4px 0;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                pointer-events: none;
+                font-weight: 500;
+                font-size: 0.9rem;
+            }
+
+            /* Submenu hover refinement for collapsed mode */
+            .sidebar-mini.sidebar-collapse .main-sidebar:not(.sidebar-no-expand) .nav-item:hover > .nav-treeview {
+                display: block !important;
+                position: absolute;
+                left: 73px;
+                top: 44px; /* Position below the main link p tag */
+                width: 200px;
+                background-color: var(--submenu-bg) !important;
+                box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+                border: 1px solid #dcdcde;
+                border-left: none;
+                z-index: 999;
+            }
+
+            .sidebar-mini.sidebar-collapse .main-sidebar:not(.sidebar-no-expand) .nav-item:hover > .nav-treeview .nav-link {
+                padding-left: 20px !important;
+                justify-content: flex-start !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <!-- Body started -->
+    <div class="wrapper">
+        <!-- Wrapper started -->
+
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light px-3 d-flex justify-content-between align-items-center" style="height: 56px; border-bottom: 1px solid #e2e8f0;">
+            <!-- Left Side: Elegant Welcome Title -->
+            <div class="d-flex align-items-center">
+                <i class="fa-solid fa-circle-user text-success mr-2" style="font-size: 1.35rem; opacity: 0.85;"></i>
+                <span style="font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 700; color: #1e293b; letter-spacing: -0.2px;">
+                    Welcome to <span class="text-success" style="position: relative;">Admin Dashboard<span style="position: absolute; bottom: -3px; left: 0; width: 100%; height: 2px; background: rgba(40, 167, 69, 0.2);"></span></span>
+                </span>
+            </div>
+            
+            <!-- Right Side: Clean Active Badge -->
+            <div class="d-none d-md-flex align-items-center">
+                <span class="badge badge-success px-3 py-2" style="font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600; border-radius: 30px; letter-spacing: 0.5px; box-shadow: 0 2px 6px rgba(40, 167, 69, 0.12);">
+                    <i class="fa-solid fa-circle-check mr-1 animate-pulse"></i> SECURE ACTIVE SESSION
+                </span>
+            </div>
+        </nav>
+
+        <div class="main-header" style="padding: 0px 10px; background-color: #f4f6f9; border-bottom: none !important;">
+            <div class="content-header">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark"><?= $page_title ?></h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <?php foreach ($breadcrumb_Items as $item): ?>
+                                <li class="breadcrumb-item <?= $item['url'] === '#' ? 'active' : '' ?>">
+                                    <?= $item['url'] === '#' ? $item['title'] : "<a href='{$item['url']}'>{$item['title']}</a>" ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside class="main-sidebar sidebar-light-primary elevation-4">
+            <a href="./" class="brand-link d-flex align-items-center justify-content-center text-decoration-none">
+                <!-- Collapsed state (mini logo) -->
+                <svg class="brand-image-mini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30" height="30">
+                    <g>
+                        <path d="M 5 20 C 15 10, 25 12, 35 22" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="3.5" stroke-linecap="round"/>
+                        <path d="M 2 25 C 12 14, 22 16, 32 26" fill="none" stroke="#ef7d00" stroke-width="3.5" stroke-linecap="round"/>
+                        <path d="M 8 16 C 16 8, 26 10, 36 18" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3.5" stroke-linecap="round"/>
+                    </g>
+                </svg>
+                <!-- Expanded state (large logo) -->
+                <svg class="brand-image-large" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 65" width="130" height="42">
+                    <g>
+                        <path d="M 12 18 C 22 8, 32 10, 42 20 C 50 28, 56 12, 66 14 C 74 16, 80 22, 86 18" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M 8 23 C 18 12, 28 14, 38 24 C 46 32, 52 16, 62 16 C 70 16, 76 26, 82 23" fill="none" stroke="#ef7d00" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M 16 14 C 24 6, 34 8, 44 16 C 52 24, 58 10, 68 11 C 76 12, 82 18, 88 15" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+                    </g>
+                    <text x="6" y="47" font-family="'Montserrat', sans-serif" font-weight="800" font-size="28" fill="#ffffff" letter-spacing="-0.5">Dholera</text>
+                    <text x="7" y="58" font-family="'Outfit', sans-serif" font-weight="600" font-size="7.2" fill="#cbd5e1" letter-spacing="0.1">HUMAN BUILT ON TRUST. ALWAYS.</text>
+                </svg>
+            </a>
+            <div class="sidebar">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
+                    <a href="<?php echo $adminBase; ?>profile.php" class="d-flex align-items-center text-decoration-none">
+                        <div class="image">
+                            <?php 
+                            // $adminBase is '' for admin/ pages and '../' for admin/enquiries/ etc.
+                            $side_avatar = $adminBase . '../uploads/profile/' . ($_SESSION['admin_avatar'] ?? 'default-avatar.png');
+                            if (empty($_SESSION['admin_avatar']) || !file_exists(__DIR__ . '/../uploads/profile/' . ($_SESSION['admin_avatar'] ?? ''))) {
+                                $side_avatar = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23cbd5e1'><circle cx='50' cy='35' r='20'/><path d='M 15,85 C 15,60 30,55 50,55 C 70,55 85,60 85,85 Z'/></svg>";
+                            }
+                            ?>
+                            <img src="<?php echo $side_avatar; ?>" class="img-circle elevation-2 bg-white" alt="User Image" style="width: 34px; height: 34px; object-fit: cover;">
+                        </div>
+                        <div class="info text-dark">
+                            <?php echo htmlspecialchars($_SESSION['admin_name'] ?? 'Rahul'); ?>
+                        </div>
+                    </a>
+                </div>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+                        <?php foreach ($menuItems as $menuItem): ?>
+                            <li class="nav-item has-treeview <?= $menuItem === $active_menu ? 'menu-open' : '' ?>">
+                                <a class="nav-link <?= $menuItem === $active_menu ? 'active' : '' ?>" href="#">
+                                    <i class="nav-icon <?= $menuItem['icon'] ?>"></i>
+                                    <p>
+                                        <?= $menuItem['menuTitle'] ?>
+                                        <?php if ($menuItem['menuTitle'] === 'Enquiries' && $_newEnqCount > 0): ?>
+                                            <span class="badge badge-warning right" style="font-size:10px;padding:2px 6px;border-radius:10px;"><?= $_newEnqCount ?></span>
+                                        <?php endif; ?>
+                                        <?= !empty($menuItem['pages']) ? '<i class="right fas toggle-icon"></i>' : '' ?>
+                                    </p>
+                                </a>
+                                <?php if (!empty($menuItem['pages'])): ?>
+                                    <ul class="nav nav-treeview">
+                                        <?php foreach ($menuItem['pages'] as $page): ?>
+                                            <li class="nav-item">
+                                                <a href="<?= $adminBase . $page['url'] ?>"
+                                                    class="nav-link <?= $page === $active_page ? 'active' : '' ?>">
+                                                    <i class="fas fa-minus nav-icon submenu-icon"></i>
+                                                    <p><?= $page['title'] ?></p>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                            </li>
+                        <?php endforeach; ?>
+                        <li class="nav-item" onclick="logout()">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>Logout</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="content-wrapper">
+            <!-- Content-wrapper started -->
+            <section class="content">
+                <!-- Content section started -->
+                <div class="container-fluid">
+                    <!-- Container-fluid started -->

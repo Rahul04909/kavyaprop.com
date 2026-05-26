@@ -1,0 +1,571 @@
+/* ==========================================================================
+   DHOLERA ABOUT PAGE EXCLUSIVES STYLESHEET
+   Developed by Expert UI/UX Designer & Developer
+   ========================================================================== */
+
+.dh-aboutpage-hero {
+  background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.96) 90%), url('../images/hero-bg.png') no-repeat center center/cover;
+  padding: 60px 5%;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 3px solid var(--dh-orange, #ef7d00);
+}
+
+.dh-aboutpage-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.dh-aboutpage-hero p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 🔷 1. SECTION: VISION & STORY */
+.dh-aboutpage-story {
+  padding: 80px 5%;
+  background-color: #ffffff;
+}
+
+.dh-aboutpage-story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.dh-aboutpage-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--dh-orange, #ef7d00);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.dh-aboutpage-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1c1d1f;
+  margin: 0 0 20px 0;
+  line-height: 1.25;
+}
+
+.dh-aboutpage-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+}
+
+.dh-aboutpage-graphic-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.dh-aboutpage-graphic {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.dh-aboutpage-graphic-container:hover .dh-aboutpage-graphic {
+  transform: scale(1.02);
+}
+
+/* 🔷 2. SECTION: CORE PILLARS */
+.dh-aboutpage-pillars {
+  padding: 80px 5%;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dh-pillars-grid {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.dh-pillar-card {
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+}
+
+.dh-pillar-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dh-green, #2b6009);
+  box-shadow: 0 10px 20px rgba(43, 96, 9, 0.03);
+}
+
+.dh-pillar-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  background-color: rgba(43, 96, 9, 0.08);
+  color: var(--dh-green, #2b6009);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.dh-pillar-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1c1d1f;
+  margin: 0 0 12px 0;
+}
+
+.dh-pillar-card p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 🔷 3. SECTION: COUNTERS & STATS */
+.dh-aboutpage-stats {
+  padding: 80px 5%;
+  background-color: #ffffff;
+}
+
+.dh-stats-grid-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dh-about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 40px;
+  border-radius: 24px;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dh-about-stat-item {
+  text-align: center;
+  position: relative;
+}
+
+.dh-about-stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -15px;
+  width: 1px;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dh-stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--dh-orange, #ef7d00);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.dh-stat-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   STORY HIGHLIGHTS LIST
+   ========================================================================== */
+.dh-story-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dh-story-highlights li {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dh-story-highlights li i {
+  color: var(--dh-green, #2b6009);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.dh-about-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--dh-orange, #ef7d00), #f59d30);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(239, 125, 0, 0.3);
+}
+
+.dh-about-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(239, 125, 0, 0.4);
+}
+
+/* ==========================================================================
+   STORY IMAGE BADGE
+   ========================================================================== */
+.dh-aboutpage-graphic-container {
+  position: relative;
+}
+
+.dh-about-img-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 14px 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dh-badge-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--dh-orange, #ef7d00);
+  line-height: 1;
+}
+
+.dh-badge-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11.5px;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   STAT SUFFIX STYLING
+   ========================================================================== */
+.dh-stat-suffix {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--dh-orange, #ef7d00);
+  margin-left: 2px;
+  vertical-align: baseline;
+}
+
+/* ==========================================================================
+   SECTION 5 · TIMELINE
+   ========================================================================== */
+.dh-aboutpage-timeline {
+  padding: 80px 5%;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dh-timeline-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Central vertical line */
+.dh-timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--dh-orange, #ef7d00) 0%, #e2e8f0 100%);
+  transform: translateX(-50%);
+}
+
+.dh-timeline-item {
+  display: flex;
+  width: 50%;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.dh-tl-left {
+  padding-right: 48px;
+  justify-content: flex-end;
+  align-self: flex-start;
+}
+
+.dh-tl-right {
+  padding-left: 48px;
+  margin-left: 50%;
+}
+
+/* Circle dot on the timeline */
+.dh-tl-left::after,
+.dh-tl-right::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--dh-orange, #ef7d00);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--dh-orange, #ef7d00);
+  z-index: 2;
+}
+
+.dh-tl-left::after {
+  right: -7px;
+}
+
+.dh-tl-right::before {
+  left: -7px;
+}
+
+.dh-timeline-content {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 22px 24px;
+  transition: all 0.3s ease;
+  max-width: 360px;
+}
+
+.dh-timeline-content:hover {
+  border-color: var(--dh-orange, #ef7d00);
+  box-shadow: 0 6px 20px rgba(239, 125, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.dh-tl-active {
+  border-color: var(--dh-orange, #ef7d00) !important;
+  box-shadow: 0 6px 20px rgba(239, 125, 0, 0.12);
+}
+
+.dh-tl-year {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--dh-orange, #ef7d00);
+  background: rgba(239, 125, 0, 0.08);
+  border-radius: 6px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.dh-timeline-content h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1c1d1f;
+  margin: 0 0 8px 0;
+}
+
+.dh-timeline-content p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 6 · CTA BANNER
+   ========================================================================== */
+.dh-about-cta-section {
+  padding: 80px 5%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+  border-top: 3px solid var(--dh-orange, #ef7d00);
+}
+
+.dh-about-cta-inner {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dh-about-cta-inner h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.dh-about-cta-inner p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin: 0 0 34px 0;
+}
+
+.dh-about-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dh-about-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--dh-orange, #ef7d00), #f59d30);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(239, 125, 0, 0.35);
+}
+
+.dh-about-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(239, 125, 0, 0.5);
+}
+
+.dh-about-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dh-about-cta-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 991px) {
+  .dh-aboutpage-story-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .dh-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .dh-about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .dh-about-stat-item:nth-child(2)::after {
+    display: none;
+  }
+
+  /* Collapse timeline to single column */
+  .dh-timeline-container::before {
+    left: 16px;
+  }
+  .dh-timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 0;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+  .dh-tl-left {
+    padding-right: 0;
+    padding-left: 50px;
+    justify-content: flex-start;
+  }
+  .dh-tl-left::after {
+    right: auto;
+    left: 9px;
+  }
+  .dh-tl-right::before {
+    left: 9px;
+  }
+  .dh-timeline-content {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .dh-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .dh-about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .dh-about-stat-item::after {
+    display: none;
+  }
+  .dh-aboutpage-title {
+    font-size: 1.7rem;
+  }
+  .dh-about-cta-inner h2 {
+    font-size: 1.5rem;
+  }
+  .dh-aboutpage-hero h1 {
+    font-size: 1.8rem;
+  }
+}

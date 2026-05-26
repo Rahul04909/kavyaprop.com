@@ -1,0 +1,342 @@
+/* ==========================================================================
+   DHOLERA RESPONSIVE SLIDER (HERO COMPONENT) STYLES
+   Developed by Expert UI/UX Designer & Developer
+   ========================================================================== */
+
+.dh-hero-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  z-index: 10;
+  /* Premium ratio aspect: 1920x520 standard on wide desktop */
+  aspect-ratio: 1920 / 520;
+  min-height: 250px;
+}
+
+.dh-hero-slider-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.dh-hero-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dh-hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Elegant Text Overlay Overlay for Premium Visual Appeal */
+.dh-hero-slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.2) 60%, rgba(15, 23, 42, 0) 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+.dh-hero-slide-content {
+  max-width: 650px;
+  color: #ffffff;
+  animation: slideContentUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.dh-hero-slide.dh-active-slide .dh-hero-slide-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.2s;
+}
+
+.dh-hero-slide-tag {
+  background-color: var(--dh-orange, #ef7d00);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(239, 125, 0, 0.2);
+}
+
+.dh-hero-slide-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dh-hero-slide-title span {
+  color: var(--dh-orange, #ef7d00);
+}
+
+.dh-hero-slide-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+}
+
+.dh-hero-slide-btn {
+  background-color: var(--dh-green, #2b6009);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(43, 96, 9, 0.3);
+}
+
+.dh-hero-slide-btn:hover {
+  background-color: var(--dh-green-hover, #1e4505);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(43, 96, 9, 0.4);
+}
+
+.dh-hero-slide-btn i {
+  transition: transform 0.2s ease;
+}
+
+.dh-hero-slide-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* Arrow Navigation System (Flipkart Style on Hover / Persistent on Mobile) */
+.dh-hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 96px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  font-size: 20px;
+  z-index: 15;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  outline: none;
+  opacity: 0; /* Hidden by default like Flipkart, reveals on container hover */
+}
+
+.dh-hero-arrow:hover {
+  background-color: #ffffff;
+  color: var(--dh-orange, #ef7d00);
+}
+
+.dh-hero-slider-container:hover .dh-hero-arrow {
+  opacity: 1;
+}
+
+.dh-hero-arrow-left {
+  left: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.dh-hero-arrow-right {
+  right: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+/* Dots Indicators System */
+.dh-hero-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 15;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dh-hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dh-hero-dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dh-hero-dot.dh-active {
+  background-color: #ffffff;
+  width: 24px;
+  border-radius: 10px;
+}
+
+/* Animation Keyframes */
+@keyframes slideContentUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   SLIDER RESPONSIVENESS
+   ========================================================================== */
+
+/* Laptop Viewport Adjustment */
+@media (max-width: 1200px) {
+  .dh-hero-slide-overlay {
+    padding: 0 50px;
+  }
+  .dh-hero-slide-title {
+    font-size: 2.2rem;
+  }
+  .dh-hero-slide-desc {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablet Viewport Collapse */
+@media (max-width: 991px) {
+  .dh-hero-slider-container {
+    aspect-ratio: 16 / 6;
+  }
+  .dh-hero-slide-overlay {
+    padding: 0 40px;
+  }
+  .dh-hero-slide-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  .dh-hero-slide-desc {
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    max-width: 450px;
+  }
+  .dh-hero-arrow {
+    opacity: 0.85; /* Keep visible on touch screens */
+    width: 38px;
+    height: 76px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile Viewport Scaling (Flipkart Mobile Banner Mode) */
+@media (max-width: 768px) {
+  .dh-hero-slider-container {
+    aspect-ratio: 16 / 7;
+    min-height: 200px;
+  }
+  .dh-hero-slide-overlay {
+    padding: 0 25px;
+    background: rgba(15, 23, 42, 0.65); /* dark overlay covering fully for readability */
+  }
+  .dh-hero-slide-content {
+    max-width: 100%;
+  }
+  .dh-hero-slide-tag {
+    font-size: 10px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+  }
+  .dh-hero-slide-title {
+    font-size: 1.4rem;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .dh-hero-slide-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+  .dh-hero-slide-btn {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+  .dh-hero-arrow {
+    display: none; /* Hide arrows on mobile to optimize swipe interactions */
+  }
+  .dh-hero-dots {
+    bottom: 12px;
+  }
+  .dh-hero-dot {
+    width: 8px;
+    height: 8px;
+  }
+  .dh-hero-dot.dh-active {
+    width: 16px;
+  }
+}
+
+/* Small Device Screen Sizing */
+@media (max-width: 480px) {
+  .dh-hero-slider-container {
+    aspect-ratio: 16 / 9;
+  }
+  .dh-hero-slide-title {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .dh-hero-slide-desc {
+    display: none; /* Hide description on very small mobiles to maintain clean graphics */
+  }
+  .dh-hero-slide-tag {
+    font-size: 9px;
+    padding: 2px 6px;
+    margin-bottom: 6px;
+  }
+}

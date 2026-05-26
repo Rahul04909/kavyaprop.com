@@ -1,0 +1,41 @@
+/* ==========================================================================
+   DHOLERA CONTACT PAGE EXCLUSIVES STYLESHEET
+   Developed by Expert UI/UX Designer & Developer
+   ========================================================================== */
+
+.dh-contactpage-hero {
+  background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.96) 90%), url('../images/hero-bg.png') no-repeat center center/cover;
+  padding: 60px 5%;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 3px solid var(--dh-orange, #ef7d00);
+}
+
+.dh-contactpage-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.dh-contactpage-hero p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Ensure background color is consistent and cohesive */
+.dh-contact-section {
+  background-color: #f8fafc !important;
+  padding: 80px 5% 40px 5% !important;
+}
+
+/* Adjust map padding */
+.dh-contact-map-section {
+  background-color: #f8fafc !important;
+}

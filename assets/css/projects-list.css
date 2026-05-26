@@ -1,0 +1,393 @@
+/* ==========================================================================
+   DHOLERA PROJECTS LIST PAGE STYLESHEET
+   Developed by Expert UI/UX Designer & Developer
+   ========================================================================== */
+
+.dh-projlist-hero {
+  background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.96) 90%), url('../images/hero-bg.png') no-repeat center center/cover;
+  padding: 60px 5%;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 3px solid var(--dh-orange, #ef7d00);
+}
+
+.dh-projlist-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.dh-projlist-hero p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Grid Layout */
+.dh-projlist-section {
+  padding: 60px 5%;
+  background-color: #f8fafc;
+}
+
+.dh-projlist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* ==========================================================================
+   1. SIDEBAR FILTER STYLES
+   ========================================================================== */
+.dh-projlist-sidebar {
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+  z-index: 10;
+}
+
+.dh-sidebar-widget-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #1c1d1f;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1.5px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+
+/* Search widget */
+.dh-search-box {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.dh-search-input {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13.5px;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.dh-search-input:focus {
+  outline: none;
+  border-color: var(--dh-orange, #ef7d00);
+  background-color: #ffffff;
+}
+
+.dh-search-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.dh-search-btn:hover {
+  color: var(--dh-orange, #ef7d00);
+}
+
+/* Category Filter List */
+.dh-filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dh-filter-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  color: #475569;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.dh-filter-link:hover {
+  background-color: #f1f5f9;
+  color: var(--dh-orange, #ef7d00);
+}
+
+.dh-filter-link.active {
+  background-color: rgba(239, 125, 0, 0.08);
+  color: var(--dh-orange, #ef7d00);
+  font-weight: 700;
+}
+
+.dh-filter-count {
+  font-size: 11px;
+  background-color: #e2e8f0;
+  color: #475569;
+  padding: 2px 6px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.dh-filter-link.active .dh-filter-count {
+  background-color: var(--dh-orange, #ef7d00);
+  color: #ffffff;
+}
+
+/* Reset Button */
+.dh-reset-btn {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dh-reset-btn:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Sidebar Consultation CTA Box */
+.dh-sidebar-cta {
+  background: linear-gradient(135deg, #2b6009 0%, #1e3d05 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.dh-sidebar-cta h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+}
+
+.dh-sidebar-cta p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.dh-sidebar-cta-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.1);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.dh-sidebar-cta-input::placeholder {
+  color: #94a3b8;
+}
+
+.dh-sidebar-cta-input:focus {
+  outline: none;
+  background-color: rgba(255,255,255,0.15);
+  border-color: var(--dh-orange, #ef7d00);
+}
+
+.dh-sidebar-cta-btn {
+  width: 100%;
+  background-color: var(--dh-orange, #ef7d00);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dh-sidebar-cta-btn:hover {
+  background-color: #ffaa00;
+}
+
+/* ==========================================================================
+   2. MAIN CONTENT STYLES
+   ========================================================================== */
+.dh-projlist-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dh-projlist-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 20px;
+}
+
+.dh-results-count {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Grid of Cards */
+.dh-projlist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Cards layout overrides to stretch correctly in the list grid */
+.dh-projlist-grid .dh-project-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  flex-shrink: 1 !important;
+}
+
+.dh-project-card-rera {
+  font-size: 10.5px;
+  color: #94a3b8;
+  margin: 4px 0 0 0;
+  font-family: 'Outfit', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   3. PAGINATION STYLES
+   ========================================================================== */
+.dh-pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.dh-pagination {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dh-page-item {
+  display: inline-block;
+}
+
+.dh-page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  color: #475569;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.dh-page-link:hover {
+  border-color: var(--dh-orange, #ef7d00);
+  color: var(--dh-orange, #ef7d00);
+  background-color: rgba(239, 125, 0, 0.02);
+}
+
+.dh-page-item.active .dh-page-link {
+  background-color: var(--dh-orange, #ef7d00);
+  border-color: var(--dh-orange, #ef7d00);
+  color: #ffffff;
+}
+
+.dh-page-item.disabled .dh-page-link {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.dh-page-link-nav {
+  border-radius: 8px;
+  width: auto;
+  padding: 0 16px;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .dh-projlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .dh-projlist-container {
+    grid-template-columns: 1fr;
+  }
+  .dh-projlist-sidebar {
+    position: static;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 640px) {
+  .dh-projlist-grid {
+    grid-template-columns: 1fr;
+  }
+  .dh-projlist-header-bar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

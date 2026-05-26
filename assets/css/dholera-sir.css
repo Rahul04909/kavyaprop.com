@@ -1,0 +1,1649 @@
+/* ==========================================================================
+   DHOLERA SIR PREMIUM SMART CITY LANDING PAGE STYLESHEET
+   Theme: Vibrant Green, Dark Deep Slate, Accents of Smart Blue & Amber
+   ========================================================================== */
+
+:root {
+  --dsir-green: #2b6009;
+  --dsir-green-light: #4c8c1d;
+  --dsir-green-glow: rgba(43, 96, 9, 0.15);
+  --dsir-blue: #0066cc;
+  --dsir-blue-dark: #004d99;
+  --dsir-dark: #0f172a;
+  --dsir-light-bg: #f8fafc;
+  --dsir-white: #ffffff;
+  --dsir-amber: #ef7d00;
+  --dsir-amber-hover: #d46c00;
+  --dsir-border: #e2e8f0;
+  --dsir-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+  --dsir-shadow-hover: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
+}
+
+/* Page Reset & Defaults */
+.dsir-page-wrapper {
+  font-family: 'Outfit', sans-serif;
+  color: #334155;
+  background-color: var(--dsir-white);
+  overflow-x: hidden;
+}
+
+/* Header Spacer to avoid overlaps with the sticky header */
+.dsir-header-spacer {
+  height: var(--dh-header-height, 125px);
+  background-color: var(--dsir-white);
+}
+@media (max-width: 991px) {
+  .dsir-header-spacer {
+    height: 70px;
+  }
+}
+
+/* Common Typography & Accents */
+.dsir-section-heading {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  position: relative;
+}
+
+.dsir-section-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--dsir-green-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.dsir-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dsir-dark);
+  line-height: 1.25;
+}
+
+.dsir-section-title span {
+  color: var(--dsir-amber);
+  position: relative;
+}
+
+.dsir-section-title span::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--dsir-green-glow);
+  border-radius: 2px;
+}
+
+/* Glowing Animations */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 125, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(239, 125, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 125, 0, 0);
+  }
+}
+
+.dsir-btn-glow {
+  animation: glowPulse 2s infinite;
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+.dsir-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.95) 90%), url('../images/hero-bg.png') no-repeat center center/cover;
+  padding: 80px 5%;
+  color: var(--dsir-white);
+  overflow: hidden;
+}
+
+.dsir-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(43, 96, 9, 0.15) 0%, rgba(0, 102, 204, 0.1) 100%);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+.dsir-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.dsir-hero-tag {
+  background-color: var(--dsir-green-light);
+  color: var(--dsir-white);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.dsir-hero-tag i {
+  color: var(--dsir-amber);
+}
+
+.dsir-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.dsir-hero-title span {
+  color: var(--dsir-amber);
+  background: linear-gradient(135deg, var(--dsir-amber) 0%, #ffaa00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dsir-hero-subtitle {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin-bottom: 35px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.dsir-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dsir-btn-primary {
+  background-color: var(--dsir-amber);
+  color: var(--dsir-white);
+  padding: 16px 36px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.dsir-btn-primary:hover {
+  background-color: var(--dsir-amber-hover);
+  transform: translateY(-2px);
+  color: var(--dsir-white);
+}
+
+.dsir-btn-secondary {
+  background-color: transparent;
+  color: var(--dsir-white);
+  padding: 14px 34px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid var(--dsir-white);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dsir-btn-secondary:hover {
+  background-color: var(--dsir-white);
+  color: var(--dsir-dark);
+  transform: translateY(-2px);
+}
+
+/* Hero Right: Aesthetic Vector Map Box */
+.dsir-hero-graphic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dsir-map-badge {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 30px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.dsir-badge-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dsir-white);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
+}
+
+.dsir-badge-title i {
+  color: var(--dsir-green-light);
+}
+
+.dsir-badge-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.dsir-badge-stat span:first-child {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.dsir-badge-stat span:last-child {
+  font-weight: 700;
+  color: var(--dsir-white);
+}
+
+.dsir-badge-highlight {
+  background-color: var(--dsir-green-light);
+  color: var(--dsir-white);
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 0.85rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+@media (max-width: 991px) {
+  .dsir-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .dsir-hero-actions {
+    justify-content: center;
+  }
+  .dsir-hero-title {
+    font-size: 2.5rem;
+  }
+  .dsir-map-badge {
+    margin: 30px auto 0 auto;
+  }
+}
+
+/* ==========================================================================
+   3. ABOUT DHOLERA SECTION (2-Column Grid)
+   ========================================================================== */
+.dsir-about {
+  padding: 100px 5%;
+  background-color: var(--dsir-white);
+}
+
+.dsir-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.dsir-about-tag {
+  color: var(--dsir-green-light);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.dsir-about-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--dsir-dark);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.dsir-about-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 30px;
+}
+
+.dsir-about-icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dsir-about-icon-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: var(--dsir-light-bg);
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dsir-about-icon-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--dsir-green-light);
+  box-shadow: 0 10px 20px rgba(43, 96, 9, 0.08);
+}
+
+/* About Right Overview Map Container */
+.dsir-about-image-container {
+  border-radius: 0 !important;
+}
+
+.dsir-about-icon-box {
+  width: 45px;
+  height: 45px;
+  background-color: var(--dsir-white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dsir-green-light);
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  flex-shrink: 0;
+}
+
+.dsir-about-icon-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--dsir-dark);
+  margin: 0 0 5px 0;
+}
+
+.dsir-about-icon-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* About Right: Map & Gujarat highlighting card */
+.dsir-about-graphic {
+  position: relative;
+  background: linear-gradient(135deg, var(--dsir-green) 0%, var(--dsir-green-light) 100%);
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: var(--dsir-shadow-hover);
+  color: var(--dsir-white);
+  overflow: hidden;
+}
+
+.dsir-about-graphic::before {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  top: -70px;
+  left: -70px;
+}
+
+.dsir-about-map-container {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dsir-map-sketch {
+  width: 100%;
+  max-width: 280px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.dsir-about-distance {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.dsir-distance-item {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.dsir-distance-item strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--dsir-amber);
+}
+
+@media (max-width: 991px) {
+  .dsir-about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ==========================================================================
+   4. DYNAMIC PROJECTS CARDS SECTION
+   ========================================================================== */
+.dsir-projects {
+  padding: 100px 5%;
+  background-color: var(--dsir-light-bg);
+}
+
+.dsir-projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dsir-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.dsir-project-card {
+  background-color: var(--dsir-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--dsir-shadow);
+  border: 1px solid var(--dsir-border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.dsir-project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--dsir-shadow-hover);
+  border-color: rgba(43, 96, 9, 0.2);
+}
+
+.dsir-project-img-box {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.dsir-project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dsir-project-card:hover .dsir-project-img {
+  transform: scale(1.08);
+}
+
+.dsir-project-cat-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--dsir-green);
+  color: var(--dsir-white);
+  padding: 5px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.dsir-project-price-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--dsir-white);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  border: 1px solid rgba(255,255,255,0.1);
+  z-index: 2;
+}
+
+.dsir-project-body {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dsir-project-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dsir-dark);
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+.dsir-project-loc {
+  font-size: 0.85rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.dsir-project-loc i {
+  color: #ef4444;
+}
+
+.dsir-project-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  border-top: 1px solid var(--dsir-border);
+  padding-top: 15px;
+}
+
+.dsir-project-details-list li {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dsir-project-details-list li span:first-child {
+  color: #94a3b8;
+}
+
+.dsir-project-details-list li span:last-child {
+  font-weight: 600;
+}
+
+.dsir-project-btn {
+  background-color: var(--dsir-light-bg);
+  color: var(--dsir-green-light);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  display: block;
+  transition: all 0.3s ease;
+  border: 1px solid var(--dsir-border);
+}
+
+.dsir-project-card:hover .dsir-project-btn {
+  background-color: var(--dsir-green);
+  color: var(--dsir-white);
+  border-color: var(--dsir-green);
+}
+
+@media (max-width: 991px) {
+  .dsir-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dsir-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   5. USP / INVESTMENT BENEFITS (Icon Grid & Stats)
+   ========================================================================== */
+.dsir-usp {
+  padding: 100px 5%;
+  background-color: var(--dsir-white);
+}
+
+.dsir-usp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dsir-usp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.dsir-usp-card {
+  background-color: var(--dsir-white);
+  border: 1px solid var(--dsir-border);
+  padding: 35px;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dsir-usp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--dsir-shadow);
+  border-color: rgba(0, 102, 204, 0.15);
+}
+
+.dsir-usp-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background-color: rgba(0, 102, 204, 0.08);
+  color: var(--dsir-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.dsir-usp-card:hover .dsir-usp-icon {
+  background-color: var(--dsir-blue);
+  color: var(--dsir-white);
+}
+
+.dsir-usp-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--dsir-dark);
+  margin: 0 0 12px 0;
+}
+
+.dsir-usp-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Stats Counter Grid */
+.dsir-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  background: linear-gradient(135deg, var(--dsir-dark) 0%, #1e293b 100%);
+  padding: 50px;
+  border-radius: 30px;
+  color: var(--dsir-white);
+  box-shadow: var(--dsir-shadow-lg);
+}
+
+.dsir-stat-card {
+  text-align: center;
+  position: relative;
+}
+
+.dsir-stat-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: -15px;
+  width: 1px;
+  height: 70%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dsir-stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--dsir-amber);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.dsir-stat-lbl {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .dsir-usp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dsir-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .dsir-stat-card:nth-child(2)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .dsir-usp-grid {
+    grid-template-columns: 1fr;
+  }
+  .dsir-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .dsir-stat-card::after {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   6. INFRASTRUCTURE HIGHLIGHTS (TIMELINE)
+   ========================================================================== */
+.dsir-infra {
+  padding: 100px 5%;
+  background-color: var(--dsir-light-bg);
+}
+
+.dsir-infra-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dsir-timeline {
+  position: relative;
+  margin: 40px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dsir-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: var(--dsir-green-glow);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.dsir-timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+.dsir-timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: var(--dsir-white);
+  border: 4px solid var(--dsir-green-light);
+  border-radius: 50%;
+  top: 15px;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.dsir-timeline-item:hover::after {
+  background-color: var(--dsir-amber);
+  border-color: var(--dsir-white);
+  box-shadow: 0 0 0 5px var(--dsir-green-glow);
+}
+
+.dsir-timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.dsir-timeline-item.left::after {
+  right: -12px;
+}
+
+.dsir-timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.dsir-timeline-item.right::after {
+  left: -12px;
+}
+
+.dsir-timeline-card {
+  background-color: var(--dsir-white);
+  border: 1px solid var(--dsir-border);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--dsir-shadow);
+  transition: all 0.3s ease;
+}
+
+.dsir-timeline-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--dsir-shadow-hover);
+  border-color: var(--dsir-green-glow);
+}
+
+.dsir-timeline-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background-color: rgba(43, 96, 9, 0.08);
+  color: var(--dsir-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.dsir-timeline-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dsir-dark);
+  margin: 0 0 10px 0;
+}
+
+.dsir-timeline-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .dsir-timeline::before {
+    left: 20px;
+  }
+  .dsir-timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 0;
+    text-align: left !important;
+  }
+  .dsir-timeline-item.left::after,
+  .dsir-timeline-item.right::after {
+    left: 8px;
+  }
+  .dsir-timeline-item.right {
+    left: 0;
+  }
+}
+
+/* ==========================================================================
+   7. PHOTO GALLERY (Hover Zoom Grid)
+   ========================================================================== */
+.dsir-gallery {
+  padding: 100px 5%;
+  background-color: var(--dsir-white);
+}
+
+.dsir-gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dsir-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.dsir-gallery-item {
+  position: relative;
+  border-radius: 20px;
+  height: 250px;
+  overflow: hidden;
+  box-shadow: var(--dsir-shadow);
+}
+
+.dsir-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dsir-gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.4s ease;
+  transform: translateY(10px);
+}
+
+.dsir-gallery-item:hover .dsir-gallery-img {
+  transform: scale(1.12);
+}
+
+.dsir-gallery-item:hover .dsir-gallery-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dsir-gallery-title {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dsir-white);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 0 6px 0;
+}
+
+.dsir-gallery-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .dsir-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dsir-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   8. TESTIMONIAL SECTION
+   ========================================================================== */
+.dsir-testimonial {
+  padding: 100px 5%;
+  background-color: var(--dsir-light-bg);
+  overflow: hidden;
+}
+
+.dsir-testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dsir-testimonial-slider-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.dsir-testimonial-slides {
+  position: relative;
+  width: 100%;
+  min-height: 310px;
+}
+
+.dsir-testimonial-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateX(30px);
+}
+
+.dsir-testimonial-slide.active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.dsir-testimonial-card {
+  background-color: var(--dsir-white);
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 50px 45px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.dsir-card-quote {
+  position: absolute;
+  top: 35px;
+  right: 45px;
+  font-size: 3rem;
+  color: var(--dsir-green-light);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.dsir-testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.dsir-testimonial-stars i {
+  color: #e5981d;
+  font-size: 14px;
+}
+
+.dsir-testimonial-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0 0 30px 0;
+}
+
+.dsir-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dsir-author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--dsir-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dsir-author-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--dsir-dark);
+  margin: 0 0 4px 0;
+}
+
+.dsir-author-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  color: #64748b;
+  display: block;
+}
+
+/* Dots Indicators */
+.dsir-testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dsir-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dsir-dot.active {
+  background-color: var(--dsir-green-light);
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .dsir-testimonial-card {
+    padding: 35px 24px;
+  }
+  .dsir-testimonial-text {
+    font-size: 1.15rem;
+  }
+  .dsir-testimonial-slides {
+    min-height: 380px;
+  }
+}
+
+/* ==========================================================================
+   9. FAQ SECTION (ACCORDION)
+   ========================================================================== */
+.dsir-faq {
+  padding: 100px 5%;
+  background-color: var(--dsir-white);
+}
+
+.dsir-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dsir-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dsir-faq-item {
+  border: 1px solid var(--dsir-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dsir-faq-item:hover {
+  border-color: rgba(43, 96, 9, 0.25);
+  box-shadow: 0 4px 12px rgba(43, 96, 9, 0.03);
+}
+
+.dsir-faq-trigger {
+  width: 100%;
+  background-color: var(--dsir-white);
+  border: none;
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--dsir-dark);
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.dsir-faq-trigger:hover {
+  background-color: var(--dsir-light-bg);
+}
+
+.dsir-faq-icon {
+  font-size: 0.9rem;
+  color: var(--dsir-green-light);
+  transition: transform 0.3s ease;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--dsir-light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dsir-faq-item.active {
+  border-color: var(--dsir-green);
+  box-shadow: var(--dsir-shadow);
+}
+
+.dsir-faq-item.active .dsir-faq-trigger {
+  background-color: var(--dsir-light-bg);
+}
+
+.dsir-faq-item.active .dsir-faq-icon {
+  transform: rotate(180deg);
+  background-color: var(--dsir-green);
+  color: var(--dsir-white);
+}
+
+.dsir-faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--dsir-white);
+}
+
+.dsir-faq-content {
+  padding: 24px 30px 30px 30px;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  border-top: 1px solid var(--dsir-border);
+}
+
+/* ==========================================================================
+   10. CONTACT / LEAD GENERATION SECTION
+   ========================================================================== */
+.dsir-contact {
+  padding: 100px 5%;
+  background-color: var(--dsir-light-bg);
+  position: relative;
+}
+
+.dsir-contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+.dsir-contact-info-card {
+  background-color: var(--dsir-green);
+  padding: 50px;
+  border-radius: 30px;
+  color: var(--dsir-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--dsir-shadow-lg);
+  background: radial-gradient(circle at 10% 20%, var(--dsir-green) 0%, var(--dsir-green-hover) 90%);
+}
+
+.dsir-contact-info-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dsir-white);
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+}
+
+.dsir-contact-info-card p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 35px 0;
+}
+
+.dsir-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.dsir-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dsir-contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--dsir-amber);
+  flex-shrink: 0;
+}
+
+.dsir-contact-lbl {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dsir-contact-val,
+.dsir-contact-val a {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dsir-white);
+  text-decoration: none;
+}
+
+.dsir-contact-val a:hover {
+  color: var(--dsir-amber);
+}
+
+.dsir-form-card {
+  background-color: var(--dsir-white);
+  border-radius: 30px;
+  padding: 50px;
+  box-shadow: var(--dsir-shadow-lg);
+  border: 1px solid var(--dsir-border);
+}
+
+.dsir-form-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dsir-dark);
+  margin: 0 0 10px 0;
+}
+
+.dsir-form-desc {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0 0 30px 0;
+}
+
+.dsir-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.dsir-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dsir-form-group.full {
+  grid-column: span 2;
+}
+
+.dsir-form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dsir-dark);
+}
+
+.dsir-form-input {
+  padding: 14px 18px;
+  border: 1px solid var(--dsir-border);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background-color: var(--dsir-light-bg);
+  transition: all 0.3s ease;
+}
+
+.dsir-form-input:focus {
+  outline: none;
+  border-color: var(--dsir-green);
+  background-color: var(--dsir-white);
+  box-shadow: 0 0 0 4px var(--dsir-green-glow);
+}
+
+textarea.dsir-form-input {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.dsir-form-btn {
+  background-color: var(--dsir-amber);
+  color: var(--dsir-white);
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dsir-form-btn:hover {
+  background-color: var(--dsir-amber-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 991px) {
+  .dsir-contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dsir-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .dsir-form-group.full {
+    grid-column: span 1;
+  }
+  .dsir-form-card,
+  .dsir-contact-info-card {
+    padding: 30px;
+  }
+}
+
+/* ==========================================================================
+   11. WHATSAPP FLOATING BUTTON
+   ========================================================================== */
+.dsir-whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: var(--dsir-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dsir-whatsapp-float:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+  color: var(--dsir-white);
+}
+
+/* Limited Banner Highlight */
+.dsir-limited-banner {
+  background: linear-gradient(135deg, var(--dsir-amber) 0%, #ffc107 100%);
+  color: var(--dsir-dark);
+  text-align: center;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dsir-limited-banner i {
+  color: var(--dsir-dark);
+}
+
+/* ==========================================================================
+   NEW FUTURISTIC ROADMAP CAROUSEL STYLES
+   ========================================================================== */
+
+/* Floating Phase Numeric Indicator inside Image Box */
+.dsir-roadmap-num-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  color: var(--dsir-white) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 4px 8px !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  z-index: 5 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Status Badge Overrides with Custom Branding Colors */
+.dsir-roadmap-card .badge-soon {
+  background-color: var(--dsir-amber) !important;
+  color: var(--dsir-white) !important;
+}
+
+.dsir-roadmap-card .badge-planned {
+  background-color: var(--dsir-blue) !important;
+  color: var(--dsir-white) !important;
+}
+
+.dsir-roadmap-card .badge-active {
+  background-color: var(--dsir-green) !important;
+  color: var(--dsir-white) !important;
+}
+
+/* ==========================================================================
+   INFINITE BRAND LOGO NEWS TICKER COMPONENT
+   ========================================================================== */
+.dsir-ticker-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--dsir-light-bg);
+  border-top: 1.5px solid var(--dsir-border);
+  border-bottom: 1.5px solid var(--dsir-border);
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.dsir-ticker-wrapper::before,
+.dsir-ticker-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.dsir-ticker-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--dsir-white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.dsir-ticker-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--dsir-white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.dsir-ticker {
+  display: flex;
+  width: max-content;
+  animation: dsir-ticker-slide 30s linear infinite;
+  will-change: transform;
+}
+
+.dsir-ticker-wrapper:hover .dsir-ticker {
+  animation-play-state: paused; /* Smooth pause interaction on hover */
+}
+
+.dsir-ticker-group {
+  display: flex;
+  align-items: center;
+  gap: 100px; /* uniform gap between logos */
+  padding-right: 100px;
+}
+
+/* Grayscale logo styling with corporate hover highlighting */
+.dsir-ticker-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 50px;
+  flex-shrink: 0; /* Prevents logo from collapsing in flex row */
+  opacity: 0.65;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  filter: grayscale(100%);
+}
+
+.dsir-ticker-logo svg {
+  display: block;
+  width: 120px;
+  height: 50px;
+}
+
+.dsir-ticker-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Hardware accelerated infinite scrolling slide keyframes */
+@keyframes dsir-ticker-slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .dsir-ticker-wrapper {
+    padding: 16px 0;
+  }
+  .dsir-ticker-group {
+    gap: 60px;
+    padding-right: 60px;
+  }
+  .dsir-ticker-logo {
+    transform: scale(0.85);
+  }
+  .dsir-ticker-logo:hover {
+    transform: scale(0.9);
+  }
+}
+
+
+

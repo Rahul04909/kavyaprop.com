@@ -1,0 +1,197 @@
+/* ==========================================================================
+   DHOLERA ABOUT US SECTION COMPONENT STYLES
+   Developed by Expert UI/UX Designer & Developer
+   ========================================================================== */
+
+.dh-about-section {
+  padding: 80px 40px;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dh-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dh-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Image Visual Column Styling */
+.dh-about-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 4 / 3;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.dh-about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dh-about-image-wrapper:hover .dh-about-image {
+  transform: scale(1.05);
+}
+
+/* Premium overlay highlight effect */
+.dh-about-image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(239, 125, 0, 0.1) 0%, rgba(43, 96, 9, 0.1) 100%);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Text Content Column Styling */
+.dh-about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dh-about-subtitle {
+  color: var(--dh-orange, #ef7d00);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.dh-about-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+/* Premium Accent Line under Title */
+.dh-about-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--dh-green, #2b6009);
+  border-radius: 2px;
+  margin-top: 15px;
+}
+
+.dh-about-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 28px 0;
+}
+
+.dh-about-btn {
+  background-color: var(--dh-orange, #ef7d00);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(239, 125, 0, 0.25);
+}
+
+.dh-about-btn:hover {
+  background-color: var(--dh-orange-hover, #d46c00);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(239, 125, 0, 0.35);
+}
+
+.dh-about-btn i {
+  transition: transform 0.2s ease;
+}
+
+.dh-about-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   ABOUT COMPONENT RESPONSIVENESS
+   ========================================================================== */
+
+/* Laptop adjustments */
+@media (max-width: 1200px) {
+  .dh-about-grid {
+    gap: 40px;
+  }
+  .dh-about-title {
+    font-size: 1.95rem;
+  }
+}
+
+/* Tablet Layout Conversion (2 columns to 1 column stacked) */
+@media (max-width: 991px) {
+  .dh-about-section {
+    padding: 60px 24px;
+  }
+  .dh-about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .dh-about-image-wrapper {
+    aspect-ratio: 16 / 9;
+    max-width: 650px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .dh-about-content {
+    align-items: center;
+    text-align: center;
+  }
+  .dh-about-title::after {
+    margin: 12px auto 0 auto;
+  }
+}
+
+/* Mobile Screen Layout */
+@media (max-width: 576px) {
+  .dh-about-section {
+    padding: 50px 16px;
+  }
+  .dh-about-title {
+    font-size: 1.6rem;
+  }
+  .dh-about-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .dh-about-btn {
+    padding: 12px 26px;
+    font-size: 13px;
+  }
+}
