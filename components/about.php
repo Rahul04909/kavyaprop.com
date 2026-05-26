@@ -18,12 +18,12 @@
       
       <!-- Right Side: Content Column -->
       <div class="dh-about-content">
-        <span class="dh-about-subtitle">About Dholera SIR</span>
-        <h2 class="dh-about-title">The Vision of India's First Greenfield Smart City</h2>
+        <span class="dh-about-subtitle">About Kavya Prop</span>
+        <h2 class="dh-about-title">Your Trusted Partner in Smart Real Estate Investments</h2>
         <p class="dh-about-text">
-          Dholera Special Investment Region (DSIR) is a major greenfield industrial hub planned and located in Gujarat. Spanning over 920 square kilometers, Dholera is engineered to catalyze national economic development and sustainable living.
+          <strong>Kavya Prop</strong> (kavyaprop.com) is a premier, customer-centric real estate advisory and consultancy firm. We are dedicated to offering high-ROI, government-approved, and RERA-registered property options in key strategic development corridors like the Dholera Special Investment Region (SIR) and beyond.
           <br><br>
-          Featuring high-tech eco-systems, self-sustainable solar grids, ultra-high-speed telecommunication networks, and world-class multi-modal logistics (including expressways, high-speed rail, and an international greenfield airport), Dholera offers a plug-and-play foundation where industry and community thrive in complete harmony.
+          With a focus on transparent pricing, legal authenticity, and client satisfaction, we guide you from your initial inquiry and guided site visits all the way to secure registry. Partner with Kavya Prop today to invest confidently in India's most promising futuristic growth nodes.
         </p>
         <a href="#contact" class="dh-about-btn">
           Request a Consultation <i class="fa-solid fa-arrow-right"></i>
