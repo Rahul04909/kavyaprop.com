@@ -109,7 +109,7 @@
     <div class="dh-drawer-info">
       <div class="dh-drawer-info-item">
         <i class="fa-solid fa-location-dot"></i>
-        <span>Dholera is located in district Ahmedabad, Gujarat</span>
+        <span>Faridabad Haryana India</span>
       </div>
       <a href="tel:+919220551771" class="dh-drawer-info-item">
         <i class="fa-solid fa-phone"></i>
