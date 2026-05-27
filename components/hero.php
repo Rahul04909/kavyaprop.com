@@ -13,7 +13,7 @@
     
     <!-- Slide 1: Welcome / Gateways -->
     <a href="#about-us" class="dh-hero-slide dh-active-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
-      <img src="assets/images/hero-bg.png" alt="Dholera Smart City Future Visualization" class="dh-hero-slide-img" loading="eager">
+      <img src="assets/images/hero-banner.png" alt="Dholera Smart City Future Visualization" class="dh-hero-slide-img" loading="eager">
       <div class="dh-hero-slide-overlay">
         <div class="dh-hero-slide-content">
           <span class="dh-hero-slide-tag">India's First Smart Greenfield City</span>
@@ -26,7 +26,7 @@
 
     <!-- Slide 2: Residential plots -->
     <a href="#projects" class="dh-hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
-      <img src="assets/images/banner2.png" alt="Dholera Premium Residential Villa Plots" class="dh-hero-slide-img" loading="lazy">
+      <img src="assets/images/banner-1.png" alt="Dholera Premium Residential Villa Plots" class="dh-hero-slide-img" loading="lazy">
       <div class="dh-hero-slide-overlay">
         <div class="dh-hero-slide-content">
           <span class="dh-hero-slide-tag">RERA Approved Plots</span>
@@ -39,7 +39,7 @@
 
     <!-- Slide 3: Industrial Economic Zone -->
     <a href="#dholera-sir" class="dh-hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
-      <img src="assets/images/banner3.png" alt="Dholera Greenfield Industrial Zone" class="dh-hero-slide-img" loading="lazy">
+      <img src="assets/images/banner-2.png" alt="Dholera Greenfield Industrial Zone" class="dh-hero-slide-img" loading="lazy">
       <div class="dh-hero-slide-overlay">
         <div class="dh-hero-slide-content">
           <span class="dh-hero-slide-tag">Economic Industrial Zone</span>

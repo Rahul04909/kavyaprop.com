@@ -24,12 +24,12 @@
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="dh-social-link" title="Instagram" aria-label="Instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="dh-social-link" title="X (Twitter)" aria-label="X (Twitter)">
+        <!-- <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="dh-social-link" title="X (Twitter)" aria-label="X (Twitter)">
           <i class="fa-brands fa-x-twitter"></i>
         </a>
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="dh-social-link" title="YouTube" aria-label="YouTube">
           <i class="fa-brands fa-youtube"></i>
-        </a>
+        </a> -->
       </div>
     </div>
     
@@ -39,9 +39,9 @@
           <i class="fa-solid fa-location-dot"></i>
           Dholera is located in district Ahmedabad, Gujarat
         </span>
-        <a href="tel:+919220551771" class="dh-info-item dh-phone-link">
+        <a href="tel:+917056721800" class="dh-info-item dh-phone-link">
           <i class="fa-solid fa-phone"></i>
-          +91 92205 51771
+          +91 70567 21800
         </a>
       </div>
     </div>
