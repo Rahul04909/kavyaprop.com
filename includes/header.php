@@ -37,7 +37,7 @@
       <div class="dh-info-group">
         <span class="dh-info-item">
           <i class="fa-solid fa-location-dot"></i>
-          Dholera is located in district Ahmedabad, Gujarat
+          Faridabad Haryana India
         </span>
         <a href="tel:+917056721800" class="dh-info-item dh-phone-link">
           <i class="fa-solid fa-phone"></i>
@@ -59,7 +59,7 @@
       <ul class="dh-nav-menu">
         <li class="dh-nav-item"><a href="index.php" class="dh-nav-link">Home</a></li>
         <li class="dh-nav-item"><a href="projects.php" class="dh-nav-link">Projects</a></li>
-        <li class="dh-nav-item"><a href="dholera-sir.php" class="dh-nav-link">Dholera SIR</a></li>
+        <!-- <li class="dh-nav-item"><a href="dholera-sir.php" class="dh-nav-link">Dholera SIR</a></li> -->
         <li class="dh-nav-item"><a href="about.php" class="dh-nav-link">About Us</a></li>
         <li class="dh-nav-item"><a href="contact.php" class="dh-nav-link">Contact Us</a></li>
       </ul>
