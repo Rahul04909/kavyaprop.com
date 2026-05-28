@@ -49,17 +49,17 @@ require_once 'includes/db.php';
         <span class="dh-aboutpage-subtitle">Who We Are</span>
         <h2 class="dh-aboutpage-title">A Trusted Partner in Your Real Estate Journey</h2>
         <p class="dh-aboutpage-text">
-          Established as a specialized real estate advisory with our head office at Shubham Tower in NIT Faridabad, <strong>Kavya Prop</strong> has guided thousands of investors in securing high-potential residential, commercial, and industrial plots in the country's most rapid growth zones, including the prestigious Dholera Special Investment Region (SIR).
+          Established as a specialized real estate advisory with our head office in Faridabad, <strong>Kavya Prop</strong> has guided thousands of investors in securing high-potential residential, commercial, and industrial plots in the country's most rapid growth corridors—specializing in <strong>Dholera Special Investment Region (SIR)</strong> as well as <strong>Delhi NCR</strong>.
         </p>
         <p class="dh-aboutpage-text">
-          Our team combines absolute transparency, dynamic local insights, complete RERA compliance, and streamlined end-to-end guidance so that your property purchase is legally verified, stress-free, and positioned for high ROI.
+          We work closely with India's industry-leading developers and key builders, including <strong>Mirrikh Infratech</strong>, <strong>BPTP</strong>, and <strong>Signature Global</strong>, to bring you exclusive, secure, and high-performing real estate options. Our team combines absolute transparency, dynamic local insights, complete RERA compliance, and streamlined end-to-end guidance so that your property purchase is legally verified, stress-free, and positioned for high ROI.
         </p>
 
         <!-- Quick Highlights List -->
         <ul class="dh-story-highlights">
           <li><i class="fa-solid fa-circle-check"></i> 100% Verified & government-approved assets</li>
-          <li><i class="fa-solid fa-circle-check"></i> 5,000+ satisfied clients across India</li>
-          <li><i class="fa-solid fa-circle-check"></i> Complete end-to-end documentation & registry support</li>
+          <li><i class="fa-solid fa-circle-check"></i> Key Growth Zones: <strong>Dholera SIR & Delhi NCR</strong></li>
+          <li><i class="fa-solid fa-circle-check"></i> Working with Top Builders: <strong>Mirrikh Infratech, BPTP, Signature Global</strong></li>
           <li><i class="fa-solid fa-circle-check"></i> Offices in Faridabad (NCR) & Ahmedabad (Gujarat)</li>
         </ul>
 

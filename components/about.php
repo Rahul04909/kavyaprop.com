@@ -21,9 +21,9 @@
         <span class="dh-about-subtitle">About Kavya Prop</span>
         <h2 class="dh-about-title">Your Trusted Partner in Smart Real Estate Investments</h2>
         <p class="dh-about-text">
-          <strong>Kavya Prop</strong> (kavyaprop.com) is a premier, customer-centric real estate advisory and consultancy firm. We are dedicated to offering high-ROI, government-approved, and RERA-registered property options in key strategic development corridors like the Dholera Special Investment Region (SIR) and beyond.
+          <strong>Kavya Prop</strong> (kavyaprop.com) is a premier, customer-centric real estate advisory and consultancy firm. We are dedicated to offering high-ROI, government-approved, and RERA-registered property options, specializing in high-growth corridors like <strong>Dholera Special Investment Region (SIR)</strong> and <strong>Delhi NCR</strong>.
           <br><br>
-          With a focus on transparent pricing, legal authenticity, and client satisfaction, we guide you from your initial inquiry and guided site visits all the way to secure registry. Partner with Kavya Prop today to invest confidently in India's most promising futuristic growth nodes.
+          We are proud to collaborate with India's industry-leading builders and key developers, including <strong>Mirrikh Infratech</strong>, <strong>BPTP</strong>, and <strong>Signature Global</strong>. With a focus on transparent pricing, legal authenticity, and client satisfaction, we guide you from your initial inquiry and guided site visits all the way to secure registry. Partner with Kavya Prop today to invest confidently in India's most promising futuristic growth nodes.
         </p>
         
         <!-- RERA Advisory Verification -->

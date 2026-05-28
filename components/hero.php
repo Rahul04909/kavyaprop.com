@@ -13,7 +13,7 @@
     
     <!-- Slide 1: Welcome / Gateways -->
     <a href="#about-us" class="dh-hero-slide dh-active-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
-      <img src="assets/images/hero-banner.png" alt="Dholera Smart City Future Visualization" class="dh-hero-slide-img" loading="eager">
+      <img src="assets/images/hero-1.png" alt="Dholera Smart City Future Visualization" class="dh-hero-slide-img" loading="eager">
       <div class="dh-hero-slide-overlay">
         <div class="dh-hero-slide-content">
           <span class="dh-hero-slide-tag">India's First Smart Greenfield City</span>
