@@ -84,7 +84,7 @@ $csrf = generateCSRFToken();
               <i class="fa-solid fa-map-location-dot"></i>
             </div>
             <div class="dh-contact-info-details">
-              <h4>Headquarters</h4>
+              <h4>Our Office</h4>
               <p>Faridabad Haryana India</p>
             </div>
           </div>
