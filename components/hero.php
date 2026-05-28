@@ -17,7 +17,7 @@
       <div class="dh-hero-slide-overlay">
         <div class="dh-hero-slide-content">
           <span class="dh-hero-slide-tag">India's First Smart Greenfield City</span>
-          <h2 class="dh-hero-slide-title">Welcome to the Gateway of <span>Future Investments</span></h2>
+          <h2 class="dh-hero-slide-title">Gateway of Investment <span> At Dholera</span></h2>
           <p class="dh-hero-slide-desc">Explore highly-coveted residential, commercial, and industrial plots inside the Special Investment Region, equipped with global plug-and-play utilities.</p>
           <span class="dh-hero-slide-btn">Learn More <i class="fa-solid fa-arrow-right"></i></span>
         </div>
