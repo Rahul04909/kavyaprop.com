@@ -85,7 +85,7 @@ $csrf = generateCSRFToken();
             </div>
             <div class="dh-contact-info-details">
               <h4>Headquarters</h4>
-              <p>Dholera SIR, District Ahmedabad, Gujarat, India</p>
+              <p>Faridabad Haryana India</p>
             </div>
           </div>
 
