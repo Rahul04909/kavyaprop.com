@@ -36,10 +36,10 @@
         <h4 class="dh-footer-title">Navigation</h4>
         <ul class="dh-footer-links">
           <li class="dh-footer-link-item"><a href="index.php"><i class="fa-solid fa-angle-right"></i> Home</a></li>
-          <li class="dh-footer-link-item"><a href="index.php#about-us"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
-          <li class="dh-footer-link-item"><a href="index.php#projects"><i class="fa-solid fa-angle-right"></i> Smart Projects</a></li>
+          <li class="dh-footer-link-item"><a href="about.php"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li class="dh-footer-link-item"><a href="projects.php"><i class="fa-solid fa-angle-right"></i> Smart Projects</a></li>
           <!-- <li class="dh-footer-link-item"><a href="dholera-sir.php"><i class="fa-solid fa-angle-right"></i> Dholera SIR</a></li> -->
-          <li class="dh-footer-link-item"><a href="index.php#contact"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+          <li class="dh-footer-link-item"><a href="contact.php"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
       
