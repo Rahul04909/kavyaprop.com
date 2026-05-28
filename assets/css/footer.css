@@ -330,3 +330,77 @@
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   RERA BADGE AND DOWNLOAD BUTTON STYLING
+   ========================================================================== */
+.dh-footer-rera {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.dh-rera-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dh-rera-label i {
+  color: var(--dh-orange, #ef7d00);
+  font-size: 15px;
+}
+
+.dh-rera-label strong {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.dh-rera-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(239, 125, 0, 0.1);
+  border: 1px solid rgba(239, 125, 0, 0.3);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.dh-rera-download i {
+  font-size: 14px;
+  color: var(--dh-orange, #ef7d00);
+  transition: transform 0.2s ease;
+}
+
+.dh-rera-download:hover {
+  background-color: var(--dh-orange, #ef7d00);
+  border-color: var(--dh-orange, #ef7d00);
+  box-shadow: 0 4px 12px rgba(239, 125, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.dh-rera-download:hover i {
+  color: #ffffff;
+  transform: translateY(2px);
+}
+
+/* Make sure mobile center works */
+@media (max-width: 768px) {
+  .dh-footer-rera {
+    align-items: center;
+    justify-content: center;
+  }
+}

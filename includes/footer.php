@@ -21,6 +21,14 @@
         <p class="dh-footer-about">
           India's premier development alliance coordinating transparent bookings, legal property registries, and world-class infrastructure layout systems within Dholera Special Investment Region.
         </p>
+        
+        <!-- RERA Registration -->
+        <div class="dh-footer-rera">
+          <span class="dh-rera-label"><i class="fa-solid fa-shield-halved"></i> HRERA No: <strong>HRERA-PKL-REA-2819-2024</strong></span>
+          <a href="assets/rera-certificate.pdf" download class="dh-rera-download" title="Download HRERA Certificate">
+            <i class="fa-solid fa-file-arrow-down"></i> Download RERA Certificate
+          </a>
+        </div>
       </div>
       
       <!-- Column 2: Navigation Links -->

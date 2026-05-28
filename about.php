@@ -63,6 +63,21 @@ require_once 'includes/db.php';
           <li><i class="fa-solid fa-circle-check"></i> Offices in Faridabad (NCR) & Ahmedabad (Gujarat)</li>
         </ul>
 
+        <!-- RERA Advisory Verification Card -->
+        <div class="dh-about-rera-card">
+          <div class="dh-rera-card-icon">
+            <i class="fa-solid fa-shield-check" style="color: var(--dh-orange, #ef7d00); font-size: 28px;"></i>
+          </div>
+          <div class="dh-rera-card-details">
+            <h4 class="dh-rera-card-title">Government Registered Real Estate Broker</h4>
+            <p class="dh-rera-card-no">Haryana RERA Registration No: <strong style="color: #1e293b;">HRERA-PKL-REA-2819-2024</strong></p>
+            <p class="dh-rera-card-desc">In compliance with the Real Estate (Regulation and Development) Act, 2016, we maintain full legal credentials for state and national property brokerage services.</p>
+            <a href="assets/rera-certificate.pdf" download class="dh-rera-download-btn-about" title="Download RERA Certificate">
+              <i class="fa-solid fa-download"></i> Download Government RERA Certificate (PDF)
+            </a>
+          </div>
+        </div>
+
         <a href="contact.php" class="dh-about-cta-btn">
           Talk to an Expert <i class="fa-solid fa-arrow-right"></i>
         </a>

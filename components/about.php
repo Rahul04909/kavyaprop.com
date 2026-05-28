@@ -25,6 +25,15 @@
           <br><br>
           With a focus on transparent pricing, legal authenticity, and client satisfaction, we guide you from your initial inquiry and guided site visits all the way to secure registry. Partner with Kavya Prop today to invest confidently in India's most promising futuristic growth nodes.
         </p>
+        
+        <!-- RERA Advisory Verification -->
+        <div class="dh-about-rera-inline">
+          <span class="dh-about-rera-tag"><i class="fa-solid fa-shield-halved"></i> HRERA No: <strong>HRERA-PKL-REA-2819-2024</strong></span>
+          <a href="assets/rera-certificate.pdf" download class="dh-about-rera-link" title="Download RERA Certificate">
+            <i class="fa-solid fa-file-arrow-down"></i> Certificate
+          </a>
+        </div>
+
         <a href="#contact" class="dh-about-btn">
           Request a Consultation <i class="fa-solid fa-arrow-right"></i>
         </a>

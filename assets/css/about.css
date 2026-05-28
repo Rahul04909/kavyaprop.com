@@ -195,3 +195,65 @@
     font-size: 13px;
   }
 }
+
+/* ==========================================================================
+   INLINE RERA ADVISORY STYLING
+   ========================================================================== */
+.dh-about-rera-inline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.dh-about-rera-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14.5px;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dh-about-rera-tag i {
+  color: var(--dh-orange, #ef7d00);
+  font-size: 15px;
+}
+
+.dh-about-rera-tag strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.dh-about-rera-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--dh-orange, #ef7d00);
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.dh-about-rera-link i {
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.dh-about-rera-link:hover {
+  color: var(--dh-orange-hover, #d46c00);
+}
+
+.dh-about-rera-link:hover i {
+  transform: translateY(2px);
+}
+
+@media (max-width: 991px) {
+  .dh-about-rera-inline {
+    justify-content: center;
+    width: 100%;
+  }
+}
