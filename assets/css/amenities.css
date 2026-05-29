@@ -1,0 +1,312 @@
+/* ==========================================================================
+   DHOLERA NEW AMENITIES BANNER COMPONENT STYLESHEET
+   Developed by Expert UI/UX Designer & Developer
+   ========================================================================== */
+
+.dh-amenities-section {
+  padding: 100px 40px;
+  background-color: #f8fafc; /* Subtle light slate-grey background */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dh-amenities-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🔷 1. SECTION HEADER */
+.dh-amenities-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dh-amenities-subtitle {
+  color: var(--dh-orange, #ef7d00);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.dh-amenities-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+/* Accent bottom line */
+.dh-amenities-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--dh-orange, #ef7d00);
+  border-radius: 2px;
+}
+
+.dh-amenities-intro {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* 🔷 2. MAIN GRID LAYOUT */
+.dh-amenities-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* 🔷 3. LEFT COLUMN: AMENITIES GRID */
+.dh-amenities-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.dh-amenity-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-sizing: border-box;
+}
+
+.dh-amenity-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(239, 125, 0, 0.35);
+  box-shadow: 0 12px 24px -10px rgba(239, 125, 0, 0.15), 0 8px 16px -12px rgba(239, 125, 0, 0.1);
+}
+
+.dh-amenity-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: rgba(239, 125, 0, 0.08);
+  color: var(--dh-orange, #ef7d00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.dh-amenity-card:hover .dh-amenity-icon-wrapper {
+  background-color: var(--dh-orange, #ef7d00);
+  color: #ffffff;
+  transform: scale(1.08) rotate(8deg);
+}
+
+.dh-amenity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.dh-amenity-info h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.dh-amenity-info p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 🔷 4. RIGHT COLUMN: IMAGE SHOWCASE */
+.dh-amenities-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dh-amenities-image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e2e8f0;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  max-width: 460px;
+  background-color: #f1f5f9;
+}
+
+.dh-amenities-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dh-amenities-image-wrapper:hover .dh-amenities-image {
+  transform: scale(1.06);
+}
+
+/* Floating Glassmorphism Badges */
+.dh-amenities-badge {
+  position: absolute;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.dh-amenities-image-wrapper:hover .dh-amenities-badge {
+  transform: translateY(-2px);
+}
+
+.dh-amenities-badge i {
+  color: var(--dh-orange, #ef7d00);
+  font-size: 15px;
+}
+
+.dh-amenities-badge span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.dh-badge-top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.dh-badge-bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Subtle overlay glow */
+.dh-amenities-border-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  box-shadow: inset 0 0 20px rgba(239, 125, 0, 0.05);
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.dh-amenities-image-wrapper:hover .dh-amenities-border-glow {
+  box-shadow: inset 0 0 30px rgba(239, 125, 0, 0.15);
+}
+
+/* ==========================================================================
+   AMENITIES COMPONENT RESPONSIVENESS
+   ========================================================================== */
+
+/* Tablet / Medium Screens */
+@media (max-width: 1024px) {
+  .dh-amenities-grid {
+    gap: 36px;
+  }
+  .dh-amenities-list-grid {
+    gap: 16px;
+  }
+  .dh-amenity-card {
+    padding: 20px;
+  }
+}
+
+/* Vertical Stack for Tablets and Mobile */
+@media (max-width: 991px) {
+  .dh-amenities-section {
+    padding: 80px 24px;
+  }
+  .dh-amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .dh-amenities-right {
+    order: -1; /* Place the image showcase above the cards for better mobile rhythm */
+  }
+  .dh-amenities-image-wrapper {
+    max-width: 550px;
+    aspect-ratio: 16 / 9; /* Sleeker widescreen ratio for tablets */
+  }
+  .dh-amenities-title {
+    font-size: 1.85rem;
+  }
+}
+
+/* Mobile Screen Layout */
+@media (max-width: 600px) {
+  .dh-amenities-list-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .dh-amenities-section {
+    padding: 60px 16px;
+  }
+  .dh-amenity-card {
+    padding: 16px;
+  }
+  .dh-amenities-title {
+    font-size: 1.55rem;
+  }
+  .dh-amenities-image-wrapper {
+    aspect-ratio: 4 / 3; /* Fall back to square-ish ratio on mobile */
+  }
+  .dh-badge-top-left {
+    top: 12px;
+    left: 12px;
+    padding: 8px 12px;
+  }
+  .dh-badge-bottom-right {
+    bottom: 12px;
+    right: 12px;
+    padding: 8px 12px;
+  }
+}

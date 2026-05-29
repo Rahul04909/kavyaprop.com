@@ -28,6 +28,9 @@
   <!-- Include the Premium Projects Component (Udemy/Card Style) -->
   <?php include 'components/projects.php'; ?>
 
+  <!-- Include the Responsive Amenities Banner Component -->
+  <?php include 'components/amenities.php'; ?>
+
   <!-- Include the Front Contact Component -->
   <?php include 'components/contact.php'; ?>
 
