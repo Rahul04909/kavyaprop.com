@@ -23,33 +23,6 @@
     <div class="dh-amenities-full-showcase">
       <div class="dh-amenities-image-wrapper">
         <img src="assets/images/frontend-amenities.jpg" alt="Kavya Prop Smart Amenities Showcase" class="dh-amenities-image" loading="lazy">
-        
-        <!-- Premium glassmorphic text box overlay on the banner image -->
-        <div class="dh-amenities-banner-overlay">
-          <div class="dh-overlay-content">
-            <span class="dh-overlay-tag"><i class="fa-solid fa-shield-halved"></i> 100% Secure & Approved</span>
-            <h3>Modern Infrastructure Standard</h3>
-            <p>Experience complete plug-and-play convenience with pre-laid underground utilities, smart security systems, wide concrete roads, and beautiful green spaces already pre-integrated into our premium plot layouts.</p>
-            <div class="dh-overlay-features">
-              <span class="dh-of-item"><i class="fa-solid fa-circle-check"></i> Underground Electrics</span>
-              <span class="dh-of-item"><i class="fa-solid fa-circle-check"></i> Water & Drainage</span>
-              <span class="dh-of-item"><i class="fa-solid fa-circle-check"></i> Solar LED Roads</span>
-              <span class="dh-of-item"><i class="fa-solid fa-circle-check"></i> CCTV & Gate</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Float badges on the banner -->
-        <div class="dh-amenities-badge dh-badge-top-left">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>100% Pre-Laid Infrastructure</span>
-        </div>
-
-        <div class="dh-amenities-badge dh-badge-bottom-right">
-          <i class="fa-solid fa-building-circle-check"></i>
-          <span>Future-Ready Developments</span>
-        </div>
-
         <!-- Glow outline -->
         <div class="dh-amenities-border-glow"></div>
       </div>
