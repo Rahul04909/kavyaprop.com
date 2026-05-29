@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Dholera Smart City">
-  <title>Dholera Smart City</title>
+  <title>Kavyaprop.com</title>
   
   <style>
     body {
