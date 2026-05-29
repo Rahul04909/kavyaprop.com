@@ -1,16 +1,15 @@
 /* ==========================================================================
-   DHOLERA NEW AMENITIES BANNER COMPONENT STYLESHEET
+   DHOLERA NEW FULL-WIDTH AMENITIES BANNER COMPONENT STYLESHEET
    Developed by Expert UI/UX Designer & Developer
    ========================================================================== */
 
 .dh-amenities-section {
   padding: 100px 40px;
-  background-color: #f8fafc; /* Subtle light slate-grey background */
+  background-color: #ffffff; /* Reverted to clean white background to blend nicely with hero/projects sections */
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
   border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
 }
 
 .dh-amenities-container {
@@ -21,7 +20,7 @@
 /* 🔷 1. SECTION HEADER */
 .dh-amenities-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -72,87 +71,10 @@
   margin: 0;
 }
 
-/* 🔷 2. MAIN GRID LAYOUT */
-.dh-amenities-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 50px;
-  align-items: center;
-}
-
-/* 🔷 3. LEFT COLUMN: AMENITIES GRID */
-.dh-amenities-list-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.dh-amenity-card {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  gap: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  box-sizing: border-box;
-}
-
-.dh-amenity-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(239, 125, 0, 0.35);
-  box-shadow: 0 12px 24px -10px rgba(239, 125, 0, 0.15), 0 8px 16px -12px rgba(239, 125, 0, 0.1);
-}
-
-.dh-amenity-icon-wrapper {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background-color: rgba(239, 125, 0, 0.08);
-  color: var(--dh-orange, #ef7d00);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-
-.dh-amenity-card:hover .dh-amenity-icon-wrapper {
-  background-color: var(--dh-orange, #ef7d00);
-  color: #ffffff;
-  transform: scale(1.08) rotate(8deg);
-}
-
-.dh-amenity-info {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  box-sizing: border-box;
-}
-
-.dh-amenity-info h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #1e293b;
-  margin: 0;
-}
-
-.dh-amenity-info p {
-  font-family: 'Outfit', sans-serif;
-  font-size: 12.5px;
-  color: #64748b;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* 🔷 4. RIGHT COLUMN: IMAGE SHOWCASE */
-.dh-amenities-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* 🔷 2. FULL-WIDTH PANORAMIC BANNER SHOWCASE */
+.dh-amenities-full-showcase {
+  width: 100%;
+  margin-top: 20px;
 }
 
 .dh-amenities-image-wrapper {
@@ -161,9 +83,9 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border: 2px solid #e2e8f0;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 7; /* Beautiful panoramic widescreen crop */
   width: 100%;
-  max-width: 460px;
+  min-height: 440px;
   background-color: #f1f5f9;
 }
 
@@ -177,23 +99,101 @@
 }
 
 .dh-amenities-image-wrapper:hover .dh-amenities-image {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
-/* Floating Glassmorphism Badges */
+/* 🔷 3. PREMIUM GLASSMORPHIC TEXT OVERLAY BOX */
+.dh-amenities-banner-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background: rgba(15, 23, 42, 0.88); /* Translucent Obsidian Slate */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 36px 40px;
+  max-width: 550px;
+  color: #ffffff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  z-index: 4;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.dh-amenities-image-wrapper:hover .dh-amenities-banner-overlay {
+  transform: translateY(-4px);
+  border-color: rgba(239, 125, 0, 0.45);
+  box-shadow: 0 20px 40px rgba(239, 125, 0, 0.15), 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dh-overlay-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--dh-orange, #ef7d00);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.dh-overlay-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.dh-overlay-content p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin: 0 0 24px 0;
+}
+
+/* Overlay Bullet Features list */
+.dh-overlay-features {
+  display: flex;
+  gap: 16px 24px;
+  flex-wrap: wrap;
+}
+
+.dh-of-item {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dh-of-item i {
+  color: var(--dh-orange, #ef7d00);
+  font-size: 13px;
+}
+
+/* 🔷 4. FLOATING GLASS BADGES */
 .dh-amenities-badge {
   position: absolute;
-  background: rgba(15, 23, 42, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #ffffff;
   border-radius: 12px;
-  padding: 10px 16px;
+  padding: 8px 16px;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   z-index: 5;
   transition: all 0.3s ease;
   pointer-events: none;
@@ -205,27 +205,26 @@
 
 .dh-amenities-badge i {
   color: var(--dh-orange, #ef7d00);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .dh-amenities-badge span {
   font-family: 'Outfit', sans-serif;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
 .dh-badge-top-left {
-  top: 20px;
-  left: 20px;
+  top: 30px;
+  left: 30px;
 }
 
 .dh-badge-bottom-right {
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
 }
 
-/* Subtle overlay glow */
+/* Inner glow overlay border */
 .dh-amenities-border-glow {
   position: absolute;
   top: 0;
@@ -233,80 +232,93 @@
   width: 100%;
   height: 100%;
   border-radius: 22px;
-  box-shadow: inset 0 0 20px rgba(239, 125, 0, 0.05);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
   pointer-events: none;
   z-index: 2;
   transition: all 0.5s ease;
 }
 
-.dh-amenities-image-wrapper:hover .dh-amenities-border-glow {
-  box-shadow: inset 0 0 30px rgba(239, 125, 0, 0.15);
-}
-
 /* ==========================================================================
-   AMENITIES COMPONENT RESPONSIVENESS
+   AMENITIES BANNER RESPONSIVENESS
    ========================================================================== */
 
-/* Tablet / Medium Screens */
-@media (max-width: 1024px) {
-  .dh-amenities-grid {
-    gap: 36px;
-  }
-  .dh-amenities-list-grid {
-    gap: 16px;
-  }
-  .dh-amenity-card {
-    padding: 20px;
+/* Laptop Screens */
+@media (max-width: 1200px) {
+  .dh-amenities-image-wrapper {
+    aspect-ratio: 16 / 8;
   }
 }
 
-/* Vertical Stack for Tablets and Mobile */
-@media (max-width: 991px) {
+/* Medium Screens / Small Laptops */
+@media (max-width: 1024px) {
+  .dh-amenities-image-wrapper {
+    aspect-ratio: 16 / 8.5;
+    min-height: 400px;
+  }
+  .dh-amenities-banner-overlay {
+    bottom: 30px;
+    left: 30px;
+    padding: 30px;
+    max-width: 500px;
+  }
+  .dh-overlay-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablets / Large Mobile stacking conversion */
+@media (max-width: 768px) {
   .dh-amenities-section {
     padding: 80px 24px;
   }
-  .dh-amenities-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .dh-amenities-right {
-    order: -1; /* Place the image showcase above the cards for better mobile rhythm */
-  }
   .dh-amenities-image-wrapper {
-    max-width: 550px;
-    aspect-ratio: 16 / 9; /* Sleeker widescreen ratio for tablets */
+    aspect-ratio: 16 / 9;
+    min-height: auto;
   }
-  .dh-amenities-title {
-    font-size: 1.85rem;
+  
+  /* Stacking the overlay box under the image */
+  .dh-amenities-banner-overlay {
+    position: static;
+    max-width: 100%;
+    margin-top: 24px;
+    background: #0f172a; /* Obsidian slate block container */
+    padding: 30px 24px;
+    border-radius: 16px;
+    border-left: 5px solid var(--dh-orange, #ef7d00);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dh-amenities-image-wrapper:hover .dh-amenities-banner-overlay {
+    transform: none; /* Disable 3D shift for standard scroll rhythm */
+  }
+
+  .dh-amenities-badge {
+    display: none; /* Hide floating badges to avoid cluttering small image frames */
   }
 }
 
-/* Mobile Screen Layout */
-@media (max-width: 600px) {
-  .dh-amenities-list-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+/* Mobile Screens */
+@media (max-width: 500px) {
   .dh-amenities-section {
     padding: 60px 16px;
   }
-  .dh-amenity-card {
-    padding: 16px;
-  }
   .dh-amenities-title {
-    font-size: 1.55rem;
+    font-size: 1.6rem;
   }
-  .dh-amenities-image-wrapper {
-    aspect-ratio: 4 / 3; /* Fall back to square-ish ratio on mobile */
+  .dh-overlay-content h3 {
+    font-size: 1.2rem;
   }
-  .dh-badge-top-left {
-    top: 12px;
-    left: 12px;
-    padding: 8px 12px;
+  .dh-overlay-content p {
+    font-size: 13px;
+    margin-bottom: 20px;
   }
-  .dh-badge-bottom-right {
-    bottom: 12px;
-    right: 12px;
-    padding: 8px 12px;
+  .dh-amenities-banner-overlay {
+    padding: 24px 16px;
+  }
+  .dh-overlay-features {
+    gap: 12px 16px;
+  }
+  .dh-of-item {
+    font-size: 12px;
   }
 }
