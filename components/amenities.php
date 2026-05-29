@@ -22,7 +22,7 @@
     <!-- Amenities Full-Width Panoramic Banner Showcase -->
     <div class="dh-amenities-full-showcase">
       <div class="dh-amenities-image-wrapper">
-        <img src="https://advityahomesfaridabad.com/wp-content/uploads/2022/07/Amenities2.jpg" alt="Kavya Prop Smart Amenities Showcase" class="dh-amenities-image" loading="lazy">
+        <img src="assets/images/amenities.png" alt="Kavya Prop Smart Amenities Showcase" class="dh-amenities-image" loading="lazy">
         <!-- Glow outline -->
         <div class="dh-amenities-border-glow"></div>
       </div>
