@@ -59,7 +59,7 @@
       <ul class="dh-nav-menu">
         <li class="dh-nav-item"><a href="index.php" class="dh-nav-link">Home</a></li>
         <li class="dh-nav-item"><a href="projects.php" class="dh-nav-link">Projects</a></li>
-        <!-- <li class="dh-nav-item"><a href="dholera-sir.php" class="dh-nav-link">Dholera SIR</a></li> -->
+        <li class="dh-nav-item"><a href="dholera-sir.php" class="dh-nav-link">Dholera SIR</a></li>
         <li class="dh-nav-item"><a href="about.php" class="dh-nav-link">About Us</a></li>
         <li class="dh-nav-item"><a href="contact.php" class="dh-nav-link">Contact Us</a></li>
       </ul>
