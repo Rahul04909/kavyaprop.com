@@ -779,7 +779,7 @@ try {
     <?php include 'components/contact.php'; ?>
 
     <!-- 🟢 11. FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/919220551771?text=Hello!%20I%20am%20interested%20in%20Dholera%20Greenfield%20Smart%20City%20plots.%20Please%20send%20me%20pricing%20sheets%20and%20layout%20details." class="dsir-whatsapp-float" target="_blank" rel="noopener noreferrer" title="WhatsApp Enquiry Chat">
+    <a href="https://wa.me/917056721800?text=Hello!%20I%20am%20interested%20in%20Dholera%20Greenfield%20Smart%20City%20plots.%20Please%20send%20me%20pricing%20sheets%20and%20layout%20details." class="dsir-whatsapp-float" target="_blank" rel="noopener noreferrer" title="WhatsApp Enquiry Chat">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
