@@ -94,7 +94,7 @@
     <ul class="dh-drawer-menu">
       <li class="dh-drawer-item"><a href="index.php" class="dh-drawer-link">Home <i class="fa-solid fa-chevron-right"></i></a></li>
       <li class="dh-drawer-item"><a href="projects.php" class="dh-drawer-link">Projects <i class="fa-solid fa-chevron-right"></i></a></li>
-      <!-- <li class="dh-drawer-item"><a href="dholera-sir.php" class="dh-drawer-link">Dholera SIR <i class="fa-solid fa-chevron-right"></i></a></li> -->
+      <li class="dh-drawer-item"><a href="dholera-sir.php" class="dh-drawer-link">Dholera SIR <i class="fa-solid fa-chevron-right"></i></a></li>
       <li class="dh-drawer-item"><a href="about.php" class="dh-drawer-link">About Us <i class="fa-solid fa-chevron-right"></i></a></li>
       <li class="dh-drawer-item"><a href="index.php#blog" class="dh-drawer-link">Blog <i class="fa-solid fa-chevron-right"></i></a></li>
       <li class="dh-drawer-item"><a href="index.php#news" class="dh-drawer-link">News <i class="fa-solid fa-chevron-right"></i></a></li>

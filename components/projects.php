@@ -109,8 +109,8 @@ if (!function_exists('renderDhStars')) {
 
     <!-- Bottom "Show All" Link -->
     <div class="dh-projects-showall">
-      <a href="#about-us" class="dh-projects-link">
-        Show all Dholera Smart City Projects <i class="fa-solid fa-arrow-right"></i>
+      <a href="projects.php" class="dh-projects-link">
+        Show all  Projects <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
 
