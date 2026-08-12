@@ -444,6 +444,11 @@ body {
   transform: translateY(-2px);
 }
 
+/* Mobile Sticky Bottom CTA Bar Default State (Hidden on Desktop) */
+.dh-mobile-sticky-cta {
+  display: none;
+}
+
 /* ==========================================================================
    PROJECT DETAILS RESPONSIVENESS
    ========================================================================== */
@@ -467,8 +472,13 @@ body {
   }
 }
 
-/* Tablet Layout Conversion (Stacked 1 column) */
+/* Tablet Layout Conversion (Stacked 1 column) & Mobile Sticky CTA Activation */
 @media (max-width: 991px) {
+  /* Add padding to prevent floating bottom bar from covering content */
+  body {
+    padding-bottom: 80px !important;
+  }
+
   .dh-details-main-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -482,6 +492,88 @@ body {
     margin: 0 auto;
     width: 100%;
   }
+
+  /* Display Premium Sticky Bottom CTA Bar */
+  .dh-mobile-sticky-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.1);
+    padding: 12px 24px;
+    box-sizing: border-box;
+    z-index: 999;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .dh-mobile-cta-price {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dh-mobile-cta-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .dh-mobile-cta-val {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--dh-orange, #ef7d00);
+    line-height: 1.25;
+  }
+  
+  .dh-mobile-cta-buttons {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+  
+  .dh-mobile-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  
+  .dh-mobile-cta-call {
+    background-color: transparent;
+    color: var(--dh-green, #2b6009);
+    border: 2px solid var(--dh-green, #2b6009);
+  }
+  
+  .dh-mobile-cta-enquire {
+    background-color: var(--dh-orange, #ef7d00);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(239, 125, 0, 0.2);
+  }
+  
+  .dh-mobile-cta-enquire:hover {
+    background-color: var(--dh-orange-hover, #d46c00);
+  }
+  
+  .dh-mobile-cta-call:hover {
+    background-color: rgba(43, 96, 9, 0.05);
+  }
 }
 
 /* Small devices (Mobiles) */
@@ -489,6 +581,11 @@ body {
   .dh-details-breadcrumbs {
     padding: 12px 16px;
     font-size: 12px;
+  }
+  .dh-details-breadcrumbs-container {
+    flex-wrap: wrap;
+    align-items: center;
+    line-height: 1.5;
   }
   .dh-details-header-section {
     padding: 24px 16px 15px 16px;
@@ -504,14 +601,31 @@ body {
   .dh-details-main-section {
     padding: 20px 16px;
   }
+  
+  /* Horizontal scrolling gallery thumbnails for mobile */
   .dh-details-gallery {
     padding: 12px;
     border-radius: 12px;
   }
   .dh-details-gallery-thumbs {
+    display: flex;
+    overflow-x: auto;
     gap: 10px;
     margin-top: 10px;
+    padding-bottom: 6px;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
   }
+  .dh-details-gallery-thumbs::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+  }
+  .dh-details-gallery-thumb {
+    flex: 0 0 100px;
+    width: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+  }
+
   .dh-details-specs-card,
   .dh-details-description-card,
   .dh-details-amenities-card,
@@ -519,30 +633,97 @@ body {
     padding: 20px;
     border-radius: 12px;
   }
+
+  /* Optimized 2-column density grid for specifications on mobile */
   .dh-details-specs-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
   }
   .dh-details-section-title {
     font-size: 1.25rem;
   }
   .dh-details-specs-item {
-    padding: 10px 12px;
-    gap: 12px;
+    padding: 8px 10px;
+    gap: 10px;
+  }
+  .dh-details-specs-icon {
+    font-size: 15px;
+    width: 20px;
+  }
+  .dh-details-specs-label {
+    font-size: 10px;
   }
   .dh-details-specs-value {
-    font-size: 13.5px;
+    font-size: 12.5px;
   }
+
+  /* Safeguard dynamic HTML description content (e.g. from rich text editor) */
   .dh-details-description-text {
     font-size: 14.5px;
     line-height: 1.6;
   }
+  .dh-details-description-text img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .dh-details-description-text table {
+    width: 100% !important;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .dh-details-description-text table th,
+  .dh-details-description-text table td {
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 13.5px;
+  }
+  .dh-details-description-text iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Fluid layout for amenities */
   .dh-details-amenities-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
   }
   .dh-details-amenity-item {
-    font-size: 13.5px;
+    font-size: 13px;
+  }
+
+  /* Prevent auto-zooming on inputs in iOS and style form buttons */
+  .dh-details-sidebar-input {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+  .dh-details-sidebar-btn {
+    font-size: 15px;
+    padding: 14px 20px;
+  }
+  .dh-details-sidebar-sec-btn {
+    font-size: 15px;
+    padding: 14px 20px;
+  }
+}
+
+/* Extreme narrow devices adjustment */
+@media (max-width: 480px) {
+  .dh-mobile-sticky-cta {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .dh-mobile-cta-val {
+    font-size: 1.15rem;
+  }
+  .dh-mobile-cta-btn {
+    padding: 9px 14px;
+    font-size: 12.5px;
+    gap: 4px;
   }
 }
 

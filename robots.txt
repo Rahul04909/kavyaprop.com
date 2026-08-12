@@ -1,0 +1,22 @@
+# ==========================================
+# ROBOTS.TXT FOR KAVYAPROP.COM
+# Production Configuration - Search Indexing Optimized
+# ==========================================
+
+User-agent: *
+Allow: /
+
+# Exclude Administrative & Server-Side Folders
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /vendor/
+Disallow: /db_import/
+
+# Exclude Backend Process and Meta Files
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /process-enquiry.php
+Disallow: /install-enquiries.php
+
+# Register Canonical Sitemaps
+Sitemap: https://kavyaprop.com/sitemap.xml

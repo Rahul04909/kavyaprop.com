@@ -310,11 +310,39 @@ if (!function_exists('renderDhStars')) {
     </div>
   </section>
 
+  <!-- Mobile Sticky Bottom CTA Bar (Interactive Mobile/Tablet UX) -->
+  <div class="dh-mobile-sticky-cta" aria-label="Mobile Actions">
+    <div class="dh-mobile-cta-price">
+      <span class="dh-mobile-cta-label">Investment Rate</span>
+      <span class="dh-mobile-cta-val"><?php echo htmlspecialchars($project['price']); ?></span>
+    </div>
+    <div class="dh-mobile-cta-buttons">
+      <a href="tel:+919220551771" class="dh-mobile-cta-btn dh-mobile-cta-call">
+        <i class="fa-solid fa-phone"></i> Call
+      </a>
+      <button onclick="scrollToEnquiryForm()" class="dh-mobile-cta-btn dh-mobile-cta-enquire">
+        <i class="fa-solid fa-paper-plane"></i> Enquire
+      </button>
+    </div>
+  </div>
+
   <!-- 5. Footer include -->
   <?php include 'includes/footer.php'; ?>
 
   <!-- Gallery Switcher JavaScript Mechanics -->
   <script>
+  function scrollToEnquiryForm() {
+    const formCard = document.querySelector('.dh-details-sidebar-card');
+    if (formCard) {
+      formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Delay focus slightly for a smooth scroll transition
+      setTimeout(() => {
+        const nameInput = document.getElementById('pdName');
+        if (nameInput) nameInput.focus();
+      }, 500);
+    }
+  }
+
   function swapDetailsGallery(thumbElement, imageSrc) {
     // 1. Swap main image source with dynamic smooth opacity fade transition
     const mainImg = document.getElementById('dhDetailsMainImage');

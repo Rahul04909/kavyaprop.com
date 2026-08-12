@@ -160,6 +160,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'seo_keywords' => $seo_keywords
                     ]);
                     
+                    // Auto-rebuild search engine sitemaps
+                    require_once __DIR__ . '/../includes/sitemap-generator.php';
+                    generateSitemaps($pdo);
+                    
                     $_SESSION['proj_success'] = 'Smart plot project "' . $title . '" registered successfully!';
                     header("Location: manage-projects.php");
                     exit;

@@ -65,6 +65,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $del_stmt = $pdo->prepare("DELETE FROM projects WHERE id = :id");
             $del_stmt->execute(['id' => $proj_id]);
             
+            // Auto-rebuild search engine sitemaps
+            require_once __DIR__ . '/../includes/sitemap-generator.php';
+            generateSitemaps($pdo);
+            
             $_SESSION['proj_success'] = 'Smart plot record removed from database successfully.';
         } else {
             $_SESSION['proj_error'] = 'Error: Project record not found.';

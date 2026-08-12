@@ -224,6 +224,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'id' => $proj_id
                     ]);
                     
+                    // Auto-rebuild search engine sitemaps
+                    require_once __DIR__ . '/../includes/sitemap-generator.php';
+                    generateSitemaps($pdo);
+                    
                     $_SESSION['proj_success'] = 'Smart plot project "' . $title . '" modifications applied successfully!';
                     header("Location: manage-projects.php");
                     exit;
