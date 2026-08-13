@@ -30,6 +30,15 @@
   --dh-topbar-height: 40px;
 }
 
+/* Global Viewport Reset to prevent offscreen elements (like mobile menu) from causing horizontal scrollbars */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* --- Base Reset for Header Component --- */
 .dh-header-wrapper {
   box-sizing: border-box;
