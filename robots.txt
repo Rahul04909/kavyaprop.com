@@ -20,3 +20,4 @@ Disallow: /install-enquiries.php
 
 # Register Canonical Sitemaps
 Sitemap: https://kavyaprop.com/sitemap.xml
+Sitemap: https://kavyaprop.com/

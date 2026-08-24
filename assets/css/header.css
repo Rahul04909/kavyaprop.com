@@ -31,6 +31,10 @@
 }
 
 /* Global Viewport Reset to prevent offscreen elements (like mobile menu) from causing horizontal scrollbars */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -42,7 +46,6 @@ body {
 
 /* --- Base Reset for Header Component --- */
 .dh-header-wrapper {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: var(--dh-font-main);
@@ -51,11 +54,7 @@ body {
   width: 100%;
 }
 
-.dh-header-wrapper *,
-.dh-header-wrapper *::before,
-.dh-header-wrapper *::after {
-  box-sizing: inherit;
-}
+/* Header element default override */
 
 /* --- Top Info Bar Styles --- */
 .dh-top-bar {
@@ -184,6 +183,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  z-index: 9990;
   box-shadow: var(--dh-shadow-md);
   animation: slideDown 0.4s ease-out forwards;
 }
@@ -378,7 +379,7 @@ body {
   height: 100vh;
   background-color: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(8px);
-  z-index: 998;
+  z-index: 9998;
   opacity: 0;
   visibility: hidden;
   transition: var(--dh-transition-smooth);
@@ -397,7 +398,7 @@ body {
   width: 320px;
   height: 100vh;
   background-color: var(--dh-white);
-  z-index: 999;
+  z-index: 9999;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
@@ -448,10 +449,12 @@ body {
   justify-content: space-between;
   color: var(--dh-dark);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 16.5px;
   font-weight: 600;
-  padding: 10px 14px;
+  padding: 14px 18px;
   border-radius: 8px;
+  background-color: var(--dh-light-grey);
+  border: 1px solid transparent;
   transition: var(--dh-transition-fast);
 }
 
@@ -459,6 +462,7 @@ body {
 .dh-drawer-item.dh-active .dh-drawer-link {
   background-color: var(--dh-orange-light);
   color: var(--dh-orange);
+  border-color: rgba(239, 125, 0, 0.2);
 }
 
 /* Drawer CTA and Info Footer */

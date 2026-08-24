@@ -12,7 +12,15 @@
 
 <!-- Load Header CSS Stylesheet -->
 <link rel="stylesheet" href="assets/css/header.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C62QSFNNW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-C62QSFNNW4');
+</script>
 <header class="dh-header-wrapper" id="dhHeader">
   <!-- 1. Top Bar Information Block -->
   <div class="dh-top-bar">
